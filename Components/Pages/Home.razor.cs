@@ -1,6 +1,11 @@
-﻿namespace MachineLearningApplication_Build_2.Components.Pages
+﻿using Serilog;
+
+namespace MachineLearningApplication_Build_2.Components.Pages
 {
-    public class Home
+    public partial class Home
     {
+        public Home(){
+            Log.Information("HELLO WORLD");
+        }
     }
 }
