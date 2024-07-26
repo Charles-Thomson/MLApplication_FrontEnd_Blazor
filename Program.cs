@@ -1,3 +1,4 @@
+using Blazr.RenderState.Server;
 using MachineLearningApplication_Build_2.Components;
 using MachineLearningApplication_Build_2.Services;
 using Serilog;
@@ -21,6 +22,10 @@ builder.Services.AddRazorComponents()
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["BaseAddress"] ?? "https://localhost") });
 
 builder.Services.AddSingleton<InstanceAttributeStateContainer>();
+
+
+builder.AddBlazrRenderStateServerServices(); // Acess to render services ?
+
 
 var app = builder.Build();
 

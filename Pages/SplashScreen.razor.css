@@ -1,0 +1,23 @@
+﻿.backdrop {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(170deg, var(--secondary-color) 30%, var(--primary-color) 90%);
+    background: var(--secondary-color);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+.brand {
+    font-size: 4rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding-top: 1rem;
+    text-decoration: none;
+}
+
+/*.logo-container {
+    height: 20vh;
+    width: 20vh;
+}*/

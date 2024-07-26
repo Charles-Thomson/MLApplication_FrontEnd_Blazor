@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazr.RenderState" Version="1.0.0" />
+    <PackageReference Include="Blazr.RenderState.Server" Version="1.0.0" />
+    <PackageReference Include="Blazr.RenderState.WASM" Version="1.0.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
     <PackageReference Include="Serilog.Sinks.BrowserConsole" Version="8.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
@@ -15,6 +18,7 @@
   <ItemGroup>
     <Folder Include="Components\Buttons\Button_Groups\" />
     <Folder Include="Components\Buttons\Buttons_Individual\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 </Project>

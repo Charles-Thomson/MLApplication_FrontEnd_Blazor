@@ -1,6 +1,20 @@
-﻿<Router AppAssembly="typeof(Program).Assembly">
+﻿@using Blazr.RenderState
+@inject IBlazrRenderStateService RenderState
+
+@* @if (RenderState.IsPreRender)
+{
+    <SplashScreen />
+    return;
+} *@
+
+
+<Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="routeData" DefaultLayout="typeof(Layouts.MainLayout)" />
+        
+        <RouteView RouteData="routeData" DefaultLayout="null" />
         <FocusOnNavigate RouteData="routeData" Selector="h1" />
     </Found>
+    
 </Router>
+
+@* typeof(Layouts.MainLayout) *@
