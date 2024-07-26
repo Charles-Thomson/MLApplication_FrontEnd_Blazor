@@ -37,7 +37,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
+app.MapRazorComponents<MachineLearningApplication_Build_2.App>()
    .AddInteractiveServerRenderMode();
 
 app.Run();
