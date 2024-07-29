@@ -10,9 +10,32 @@ namespace MachineLearningApplication_Build_2.Pages
 {
     public partial class SplashScreen
     {
-        public SplashScreen()
+        [Inject]
+        public required NavigationManager NavigationManager { get; set; }
+
+        //public SplashScreen()
+        //{
+        //    SplashScreenDelayHandler();
+        //}
+
+        //protected override async Task OnInitializedAsync()
+        //{
+        //    await SplashScreenDelayHandler();
+        //}
+
+        protected override async void OnAfterRender(bool firstRender)
         {
+            
+            await SplashScreenDelayHandler();
+            
 
         }
+
+        private async Task SplashScreenDelayHandler()
+        {
+            await Task.Delay(3000);
+            NavigationManager.NavigateTo("/home");
+        }
+
     }
 }

@@ -59,7 +59,12 @@ h1:focus {
     border-color: #929292;
 }
 
-.logo-container {
+.logo-container-large {
     height: 20vh;
     width: 20vh;
+}
+
+.logo-container-small {
+    height: 2rem;
+    width: 2rem;
 }

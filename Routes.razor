@@ -1,13 +1,6 @@
 ﻿@using Blazr.RenderState
 @inject IBlazrRenderStateService RenderState
 
-@* @if (RenderState.IsPreRender)
-{
-    <SplashScreen />
-    return;
-} *@
-
-
 <Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
         
@@ -17,4 +10,3 @@
     
 </Router>
 
-@* typeof(Layouts.MainLayout) *@
