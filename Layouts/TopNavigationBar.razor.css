@@ -1,13 +1,14 @@
 ﻿.topbar {
-    display: flex;
-    background-color: var(--secondary-color);
     width: 100%;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: space-between;
-    align-content: center;
+    display: flex;
     padding-left: 5px;
     padding-right: 5px;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid #d6d5d5;
     border: solid 1px var(--secondary-color);
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
 }
 
 .topbar_item {
@@ -18,7 +19,9 @@
 .topbar_center-item-container {
     display: flex;
     justify-content: space-between;
-    width: 400px;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .topbar_left-item-container {
@@ -27,11 +30,12 @@
     gap: 10px;
 }
 
-.topbar_item-left {
-    background-color: transparent;
-    align-content: center;
-    
+.topbar_right-item-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
+
 
 .topbar_text-style {
     font-weight: bold;
@@ -39,15 +43,57 @@
     color: white;
 }
 
-.topbar_item-end {
-    background-color: green;
-    align-content: center;
-}
-
-.topbar_brand-button {
+.topbar_brand_button {
     border: none;
     background-color: transparent;
 }
+
+.topbar_search-bar-container {
+    display: flex;
+    border: none;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 400px;
+    height: 1.8rem;
+    align-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding-left:8px;
+}
+
+.topbar_search-bar-container:focus-within {
+    outline: none;
+    border-color: transparent;
+    background-color: whitesmoke;
+}
+
+.topbar_search-bar-container .search-icon {
+    height: 1.6rem;
+    width: 1.6rem;
+    
+}
+
+.topbar_search-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    color: var(--tertiary-color); /* Font colour */
+    background-color: var(--primary-color);
+}
+.topbar_search-input:focus {
+    outline: none;
+    background-color: whitesmoke;
+}
+
+.topbar_search-input::placeholder {
+    color: var(--tertiary-color);
+}
+
+
+
+
+
 
 
 
