@@ -1,25 +1,45 @@
-﻿<div class="topbar">
-    <div class="topbar_left-item-container">
+﻿@rendermode InteractiveServer
 
-        <div class="topbar_item">
-            <button class="topbar_brand_button">
-                <img src="Images/LogoOption1.png" class="logo-container-small" />
-            </button>
+<div class="topbar">
+    
+        <div class="topbar_left-item-container">
+            <Tooltip ToolTipText="Hello">
+                <div class="topbar_item">
+                <button class="topbar_button topbar_button_hover">
+                            <i class="bi bi-list icon_white"></i>
+                        </button>
+                </div>
+           </Tooltip>
+
+             <button class="topbar_button">
+                <div class="topbar_item topbar_title-text-style">Machine Learning </div>
+
+           </button>
+        
         </div>
+    
 
-        <div class="topbar_item topbar_text-style">Machine Learning </div>
-    </div>
-
+    
     <div class="topbar_center-item-container">
         <div class="topbar_search-bar-container">
             <img src="Images/LogoOption1.png" class="search-icon" />
             <input type="text" class="topbar_search-input" placeholder="Search..." />   
         </div>
-        <button>place holder</button>
     </div>
+    
 
     <div class="topbar_right-item-container">
-        <div class="topbar_item topbar_text-style">Settings</div>
+
+
+        <button class="topbar_button topbar_button_hover" title="Notifications">
+            <i class="bi bi-bell icon_white"></i>
+        </button>
+        <button class="topbar_button topbar_button_hover" title="Settings">
+            <i class="bi bi-gear icon_white"></i>
+        </button>
+        <button class="topbar_button topbar_button_hover" title="Help">
+            <i class="bi bi-patch-question icon_white"></i>
+        </button>
     </div>
 
 </div>

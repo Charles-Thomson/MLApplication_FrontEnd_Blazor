@@ -14,6 +14,7 @@
 .topbar_item {
     background-color: transparent;
     align-content: center;
+    display: inline-block;
 }
 
 .topbar_center-item-container {
@@ -27,7 +28,7 @@
 .topbar_left-item-container {
     display: flex;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 6px;
 }
 
 .topbar_right-item-container {
@@ -37,23 +38,34 @@
 }
 
 
-.topbar_text-style {
+.topbar_title-text-style {
     font-weight: bold;
     font-size: 1rem;
     color: white;
 }
 
-.topbar_brand_button {
+.topbar_button {
     border: none;
     background-color: transparent;
+    
 }
+
+.topbar_button_hover {
+}
+    .topbar_button_hover:hover {
+        border-radius: 4px;
+        background-color: var(--tertiary-color);
+    }
+
+
+    /* Adding in the hover text for the buttons*/
 
 .topbar_search-bar-container {
     display: flex;
     border: none;
     border-radius: 3px;
     overflow: hidden;
-    width: 400px;
+    width: 30vw;
     height: 1.8rem;
     align-content: center;
     align-items: center;

@@ -2,6 +2,11 @@ using Blazr.RenderState.Server;
 using MachineLearningApplication_Build_2.Components;
 using MachineLearningApplication_Build_2.Services;
 using Serilog;
+using Blazorise;
+using Blazorise.Bootstrap5;
+using Blazorise.Icons.FontAwesome;
+using Blazorise.Bootstrap;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +23,16 @@ builder.Host.UseSerilog(); // Use Serilog for logging
 // Add services to the container
 builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+
+builder.Services
+    .AddBlazorise(options =>
+    {
+        options.Immediate = true;
+    })
+    .AddBootstrapProviders()
+    .AddFontAwesomeIcons();
+
+
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["BaseAddress"] ?? "https://localhost") });
 
