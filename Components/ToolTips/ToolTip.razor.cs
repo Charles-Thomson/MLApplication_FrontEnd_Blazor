@@ -12,10 +12,10 @@ namespace MachineLearningApplication_Build_2.Components.ToolTips
     {
 
         [Parameter]
-        public string? ToolTipText { get; set; }
+        public string ToolTipText { get; set; } = "Test";
 
         [Parameter]
         public RenderFragment? ChildContent { get; set; }
-       
+
     }
 }

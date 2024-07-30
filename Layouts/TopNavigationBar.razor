@@ -1,45 +1,43 @@
 ﻿@rendermode InteractiveServer
 
 <div class="topbar">
-    
-        <div class="topbar_left-item-container">
-            <Tooltip ToolTipText="Hello">
-                <div class="topbar_item">
-                <button class="topbar_button topbar_button_hover">
-                            <i class="bi bi-list icon_white"></i>
-                        </button>
-                </div>
-           </Tooltip>
+    <div class="topbar-left">
+            <ToolTip ToolTipText="Menu">
+            <button class="topbar-button topbar-button-hover">
+                        <i class="bi bi-list icon_white"></i>
+                    </button>
+           </ToolTip>
 
-             <button class="topbar_button">
-                <div class="topbar_item topbar_title-text-style">Machine Learning </div>
-
-           </button>
-        
+        <button class="topbar-button">
+            <div class="topbar-title">Machine Learning </div>
+            </button>
         </div>
     
-
-    
-    <div class="topbar_center-item-container">
-        <div class="topbar_search-bar-container">
-            <img src="Images/LogoOption1.png" class="search-icon" />
-            <input type="text" class="topbar_search-input" placeholder="Search..." />   
+    <div class="topbar-center">
+        <div class="topbar-searchbar-container">
+            <img src="Images/LogoOption1.png" class="searchbar_icon" />
+            <input type="text" class="searchbar_input" placeholder="Search reasources and services" />
         </div>
     </div>
     
+    <div class=".topbar_right">
+        <ToolTip ToolTipText="Notifications">
+            <button class="topbar-button topbar-button-hover">
+                <i class="bi bi-bell icon_white"></i>
+            </button>
+        </ToolTip>
 
-    <div class="topbar_right-item-container">
+        <ToolTip ToolTipText="Settings">
+            <button class="topbar-button topbar-button-hover">
+                <i class="bi bi-gear icon_white"></i>
+            </button>
+        </ToolTip>
 
-
-        <button class="topbar_button topbar_button_hover" title="Notifications">
-            <i class="bi bi-bell icon_white"></i>
-        </button>
-        <button class="topbar_button topbar_button_hover" title="Settings">
-            <i class="bi bi-gear icon_white"></i>
-        </button>
-        <button class="topbar_button topbar_button_hover" title="Help">
-            <i class="bi bi-patch-question icon_white"></i>
-        </button>
+        <ToolTip ToolTipText="Help">
+            <button class="topbar-button topbar-button-hover">
+                <i class="bi bi-patch-question icon_white"></i>
+            </button>
+        </ToolTip>
     </div>
 
 </div>
