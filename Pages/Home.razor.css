@@ -1,3 +1,42 @@
-﻿body {
+﻿.main-content {
+    position: absolute;
+    width: 100vw;
+    left: 0px;
+    top: var(--topbar-size);
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 2vh;
+    background-color: transparent;
 }
 
+.sub-headding {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.resource-buttongroup-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    
+}
+
+.resource-buttongroup-item {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.button-icon {
+    width: 100%;
+    font-size: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-icon-text {
+    font-size: 1.2rem;
+}

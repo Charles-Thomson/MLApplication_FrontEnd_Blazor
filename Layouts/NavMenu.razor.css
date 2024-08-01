@@ -23,9 +23,7 @@
 }
 
 .navbar_top-row {
-    
     background-color: var(--secondary-color);
-
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */

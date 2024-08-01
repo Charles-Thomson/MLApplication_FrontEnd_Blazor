@@ -20,10 +20,8 @@ main {
     position: fixed;
     left: 0px;
     display: flex;
-    height: 2.8rem;
+    height: var(--topbar-size);
     width: 100vw;
-    
-    
 }
 
 .top-row {
@@ -49,6 +47,9 @@ main {
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+
+
 
 @media (max-width: 640.98px) {
     .top-row {
