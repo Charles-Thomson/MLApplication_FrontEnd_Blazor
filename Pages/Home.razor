@@ -1,52 +1,53 @@
 ﻿@page "/home"
 @layout MainLayout
 
-
 <PageTitle>Home</PageTitle>
 <div class="main-content">
-    <div>
-        <h1 class="sub-headding">Resources</h1>
-        <div class="resource-buttongroup-container">
+        <div>
+            <h1 class="sub-headding">Resources</h1>
 
-            <button class="button-no-style button-hover-border resource-buttongroup-item">
+            <div class="resource-buttongroup-container">
 
-                <i class="bi bi-plus-circle-dotted button-icon"></i>
-                <span class="button-icon-text">Reinforcment</span>
+                <button class="resource-buttongroup-item">
+                    <i class="bi bi-plus-circle-dotted button-icon secondary-color"></i>
+                    <span class="button-icon-text">Reinforcment</span>
+                </button>
 
-            </button>
+                <button class="resource-buttongroup-item ">
+                    <i class="bi bi-person-check button-icon secondary-color"></i>
+                    <span class="button-icon-text">Supervised</span>
+                </button>
 
+                <button class="resource-buttongroup-item">
+                    <i class="bi bi-person-x button-icon secondary-color"></i>
+                    <span class="button-icon-text">Unsupervised</span>
+                </button>
 
-            <button class="button-no-style button-hover-border resource-buttongroup-item">
+                <button class="resource-buttongroup-item">
+                    <i class="bi bi-bar-chart-line button-icon secondary-color"></i>
+                    <span class="button-icon-text">Regression</span>
+                </button>
 
-                <i class="bi bi-person-check button-icon"></i>
-                <span class="button-icon-text">Supervised</span>
+                <button class="resource-buttongroup-item">
+                    <i class="bi bi-collection button-icon secondary-color"></i>
+                    <span class="button-icon-text">Classification</span>
+                </button>
+            </div>
 
-            </button>
-
-            <button class="button-no-style button-hover-border resource-buttongroup-item">
-
-                <i class="bi bi-person-x button-icon"></i>
-                <span class="button-icon-text">Unsupervised</span>
-
-            </button>
-
-            <button class="button-no-style button-hover-border resource-buttongroup-item">
-
-                <i class="bi bi-bar-chart-line button-icon"></i>
-                <span class="button-icon-text">Regression</span>
-
-            </button>
-
-            <button class="button-no-style button-hover-border resource-buttongroup-item">
-
-                <i class="bi bi-collection button-icon"></i>
-                <span class="button-icon-text">Classification</span>
-
-            </button>
         </div>
 
-    </div>
-    
+        <div>
+            <h1 class="sub-headding">Documentation</h1>
+            <div class="documentation-group-container">
+                <Documentation_Card />
+                <Documentation_Card />
+                <Documentation_Card />
+                <Documentation_Card />
+                
+
+
+            </div>
+        </div>
 
 </div>
 

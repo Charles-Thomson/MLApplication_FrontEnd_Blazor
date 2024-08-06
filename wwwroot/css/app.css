@@ -1,12 +1,42 @@
 
 :root {
+    /*Base color scheme*/
     --base-color: #a2b5cd;
     --primary-color: #a2b5cd;
     --secondary-color: #6c749d;
     --tertiary-color: #4a4e68;
     --danger-color: #db7c24;
-
+   /*Top Bar*/
     --topbar-size: 2.8rem;
+    /*Headdings*/
+    --sub-headding-size: 1.4rem;
+    /*Icon Buttons*/
+    --icon-button-width: 150px;
+    --icon-button-height: 100px;
+    --icon-button-padding: 0.5rem;
+    --icon-button-icon-size: 2.2rem;
+    --icon-button-font-size: 1rem;
+    /*Home Page Content Padding*/
+    --main-content-margin-padding: 20vw;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --icon-button-width: 100px;
+        --icon-button-height: 70px;
+        --icon-button-padding: 0.2rem;
+        --icon-button-icon-size: 1.8rem;
+        --icon-button-font-size: 0.8rem;
+        /*Sub-headings*/
+        --sub-headding-size: 1.0rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    :root {
+        --main-content-margin-padding: 30vw;
+    }
+    }
 }
 
 html, body {
@@ -75,15 +105,29 @@ h1:focus {
     color: white;
 }
 
+.icon-red {
+    color: red;
+}
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+.secondary-color {
+    color: var(--secondary-color);
+}
+
+.tertiary-color {
+    color: var(--tertiary-color);
+}
+
 .button-no-style {
     border: none;
     background-color: transparent;
 }
 
-.button-hover-border {
-}
-    .button-hover-border:hover {
-        border-radius: 4px;
-        background-color: var(--primary-color);
-    }
+
+
+
+
 

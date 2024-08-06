@@ -1,0 +1,21 @@
+﻿.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    
+    width: 100%;
+
+}
+
+.card-title {
+    font-size: 3rem;
+    color: black;
+    background-color: red;
+
+}
+
+
+.card-body {
+    height: 100px;
+    overflow: hidden;
+}
