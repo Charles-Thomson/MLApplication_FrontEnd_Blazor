@@ -10,10 +10,10 @@ namespace MachineLearningApplication_Build_2.Components.Cards
 {
     public partial class Documentation_Card
     {
-         
-        //[Parameter] public string? Card_Title { get; set; }
 
-        //[Parameter] public string? Card_Body_Text { get; set; }
+        [Parameter] public string? Card_Title { get; set; }
+
+        [Parameter] public string? Card_Body_Text { get; set; }
         public Documentation_Card()
         {
 

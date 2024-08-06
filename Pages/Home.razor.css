@@ -17,6 +17,7 @@
 .sub-headding {
     font-size: var(--sub-headding-size);
     color: black;
+    padding-bottom: 1rem;
 }
 
 .resource-buttongroup-container {
@@ -32,10 +33,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 2rem;
     width: 100%;
     color: red;
-    background-color: whitesmoke;
+    background-color: transparent;
 }
 
 .resource-buttongroup-item {

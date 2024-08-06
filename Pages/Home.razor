@@ -1,7 +1,6 @@
 ﻿@page "/home"
 @layout MainLayout
 
-<PageTitle>Home</PageTitle>
 <div class="main-content">
         <div>
             <h1 class="sub-headding">Resources</h1>
@@ -39,13 +38,19 @@
         <div>
             <h1 class="sub-headding">Documentation</h1>
             <div class="documentation-group-container">
-                <Documentation_Card />
-                <Documentation_Card />
-                <Documentation_Card />
-                <Documentation_Card />
+            <Documentation_Card Card_Title="Supervised" Card_Body_Text=@Supervised_Learning_Card_Content> </Documentation_Card>
+            <Documentation_Card Card_Title="Unsupervised" Card_Body_Text=@Unsupervised_Learning_Card_Content />
+            <Documentation_Card Card_Title="Regression" Card_Body_Text=@Regression_Card_Content />
+            <Documentation_Card Card_Title="Classification" Card_Body_Text=@Classification_Learning_Card_Content />
+            </div>
+        </div>
+
+        <div>
+            <h1 class="sub-headding">Language & Jargon</h1>
+            <div class="documentation-group-container">
+                <Documentation_Card Card_Title="Supervised" Card_Body_Text=@Supervised_Learning_Card_Content> </Documentation_Card>
+                <Documentation_Card Card_Title="Unsupervised" Card_Body_Text=@Unsupervised_Learning_Card_Content />
                 
-
-
             </div>
         </div>
 

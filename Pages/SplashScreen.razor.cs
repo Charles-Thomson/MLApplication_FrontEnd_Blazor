@@ -13,22 +13,9 @@ namespace MachineLearningApplication_Build_2.Pages
         [Inject]
         public required NavigationManager NavigationManager { get; set; }
 
-        //public SplashScreen()
-        //{
-        //    SplashScreenDelayHandler();
-        //}
-
-        //protected override async Task OnInitializedAsync()
-        //{
-        //    await SplashScreenDelayHandler();
-        //}
-
         protected override async void OnAfterRender(bool firstRender)
-        {
-            
+        {         
             await SplashScreenDelayHandler();
-            
-
         }
 
         private async Task SplashScreenDelayHandler()
