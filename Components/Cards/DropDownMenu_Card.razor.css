@@ -1,0 +1,36 @@
+﻿.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 6px;
+    width: 100%;
+    padding: 1rem;
+    justify-content: space-between;
+    align-content: space-between;
+    
+
+    
+}
+
+.card-title {
+    font-size: 1rem;
+    color: black;
+    font-weight: bold;
+}
+
+.card-description-text {
+    font-size: 1rem;
+    color: black;
+    font-weight: normal;
+}
+
+
+.card-buttongroup-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    background-color: transparent;
+    padding: 1rem;
+    align-self: center;
+}

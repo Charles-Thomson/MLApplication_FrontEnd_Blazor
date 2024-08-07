@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Components\Buttons\Button_Groups\" />
-    <Folder Include="Components\Buttons\Buttons_Individual\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 

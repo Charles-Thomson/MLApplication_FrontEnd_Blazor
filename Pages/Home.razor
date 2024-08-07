@@ -6,34 +6,19 @@
             <h1 class="sub-headding">Resources</h1>
 
             <div class="resource-buttongroup-container">
-
-                <button class="resource-buttongroup-item">
-                    <i class="bi bi-plus-circle-dotted button-icon secondary-color"></i>
-                    <span class="button-icon-text">Reinforcment</span>
-                </button>
-
-                <button class="resource-buttongroup-item ">
-                    <i class="bi bi-person-check button-icon secondary-color"></i>
-                    <span class="button-icon-text">Supervised</span>
-                </button>
-
-                <button class="resource-buttongroup-item">
-                    <i class="bi bi-person-x button-icon secondary-color"></i>
-                    <span class="button-icon-text">Unsupervised</span>
-                </button>
-
-                <button class="resource-buttongroup-item">
-                    <i class="bi bi-bar-chart-line button-icon secondary-color"></i>
-                    <span class="button-icon-text">Regression</span>
-                </button>
-
-                <button class="resource-buttongroup-item">
-                    <i class="bi bi-collection button-icon secondary-color"></i>
-                    <span class="button-icon-text">Classification</span>
-                </button>
+                <Navigation_Icon_button Button_Title="Supervised" Button_Icon="bi bi-person-check" Button_Icon_Color="primary-color" />
+                <Navigation_Icon_button Button_Title="Unsupervised" Button_Icon="bi bi-person-x" Button_Icon_Color="primary-color" />
+                <Navigation_Icon_button Button_Title="Regression" Button_Icon="bi bi-bar-chart-line" Button_Icon_Color="primary-color" />
+                <Navigation_Icon_button Button_Title="Classification" Button_Icon="bi bi-collection" Button_Icon_Color="primary-color" />
             </div>
 
+            <div class="resource-buttongroup-drop-down-menu">
+                <DropDownMenu_Card CardBuildData=@ExampleCard>  </DropDownMenu_Card>
+            </div>
         </div>
+
+        
+    
 
         <div>
             <h1 class="sub-headding">Documentation</h1>
@@ -45,14 +30,7 @@
             </div>
         </div>
 
-        <div>
-            <h1 class="sub-headding">Language & Jargon</h1>
-            <div class="documentation-group-container">
-                <Documentation_Card Card_Title="Supervised" Card_Body_Text=@Supervised_Learning_Card_Content> </Documentation_Card>
-                <Documentation_Card Card_Title="Unsupervised" Card_Body_Text=@Unsupervised_Learning_Card_Content />
-                
-            </div>
-        </div>
+        
 
 </div>
 
