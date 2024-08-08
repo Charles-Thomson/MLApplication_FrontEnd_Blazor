@@ -1,24 +1,22 @@
 ﻿.main-content {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 5vh;
-    
-    width: 100vw;
+    gap: 20vh;
+    background-color: transparent;
     left: 0px;
-    top: var(--topbar-size);
+    height: 100%;
     padding-left: var(--main-content-margin-padding);
     padding-right: var(--main-content-margin-padding);
     padding-top: 2vh;
-    background-color: transparent;
+    
 }
 
 .resource-buttongroup-drop-down-menu {
     height: 20vh;
     width: 100%;
-    border: 2px solid black;
+    padding-bottom: 100px;
 }
-
 
 .sub-headding {
     font-size: var(--sub-headding-size);
@@ -43,7 +41,10 @@
     width: 100%;
     color: red;
     background-color: transparent;
+    margin-top: auto;
 }
+
+
 
 
 

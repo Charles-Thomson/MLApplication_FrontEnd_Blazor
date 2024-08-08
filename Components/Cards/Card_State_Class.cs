@@ -11,5 +11,18 @@ namespace MachineLearningApplication_Build_2.Components.Cards
 
         public List<Navigation_Icon_Button_StateClass>? CardIconButton_BuildData { get; set; }
 
+
+        public Card_State_Class(string CardId, 
+                                string CardTitle, 
+                                string CardDescriptionText,
+                                List<Navigation_Icon_Button_StateClass> CardIconButton_BuildData) 
+        {
+            this.CardId = CardId;
+            this.CardTitle = CardTitle;
+            this.CardDescriptionText = CardDescriptionText;
+            this.CardIconButton_BuildData = CardIconButton_BuildData;
+        }
+
+
     }
 }

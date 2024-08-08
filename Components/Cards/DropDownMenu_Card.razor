@@ -4,10 +4,13 @@
         @CardBuildData.CardDescriptionText
     </div>
     <div class="card-buttongroup-container">
+        @foreach (Navigation_Icon_Button_StateClass buildData in @CardBuildData.CardIconButton_BuildData)
+        {
+            <Navigation_Icon_button Button_Title=@buildData.button_Title
+                                    Button_Icon=@buildData.button_Icon
+                                    Button_Icon_Color=@buildData.button_Icon_Color />
+        }
         
     </div>
 
 </div>
-
-
-@* Building out the card here with the passed CardBuildData  *@

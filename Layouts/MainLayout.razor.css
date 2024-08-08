@@ -1,15 +1,26 @@
-
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto; /* Prevent horizontal overflow */
+}
 
 
 .page {
-    position: relative;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
 }
 
 main {
-    flex: 1;
-    padding-top: 3.5rem;
+    overflow: auto; /* Ensure content can scroll if it overflows */
+    
+    margin-top: var(--topbar-size); /* Ensure content does not overlap the topbar */
+    position: fixed; 
+    height: 100%;
+    left: 0px;
+    width: 100%;
 }
 
 .sidebar {
@@ -21,32 +32,15 @@ main {
     left: 0px;
     display: flex;
     height: var(--topbar-size);
-    width: 100vw;
+    width: 100%;
+    
 }
 
-.top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
+artical {
+    padding-left: 0px;
 }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
-
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
 
 
 
