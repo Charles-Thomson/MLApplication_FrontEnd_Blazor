@@ -1,14 +1,18 @@
-﻿<div class="card-container">
+﻿@typeparam T
+
+<div class="card-container">
     <div class="card-title">@CardBuildData.CardTitle</div>
+
     <div class="card-description-text">
-        @CardBuildData.CardDescriptionText
+        @TextContentAsHomePageTextContentUnpackingClass.Process
     </div>
+
     <div class="card-buttongroup-container">
         @foreach (Navigation_Icon_Button_StateClass buildData in @CardBuildData.CardIconButton_BuildData)
         {
-            <Navigation_Icon_button Button_Title=@buildData.button_Title
-                                    Button_Icon=@buildData.button_Icon
-                                    Button_Icon_Color=@buildData.button_Icon_Color />
+            <Navigation_Icon_button Button_Title=@buildData.ButtonTitle
+                                    Button_Icon=@buildData.ButtonIcon
+                                    Button_Icon_Color=@buildData.ButtonIconColor />
         }
         
     </div>

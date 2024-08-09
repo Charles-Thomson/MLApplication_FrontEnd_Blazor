@@ -1,9 +1,8 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-x: auto; /* Prevent horizontal overflow */
+    overflow-x: auto; 
 }
-
 
 .page {
     display: flex;
@@ -14,9 +13,8 @@ html, body {
 }
 
 main {
-    overflow: auto; /* Ensure content can scroll if it overflows */
-    
-    margin-top: var(--topbar-size); /* Ensure content does not overlap the topbar */
+    overflow: auto; 
+    margin-top: var(--topbar-size); 
     position: fixed; 
     height: 100%;
     left: 0px;
@@ -39,11 +37,6 @@ main {
 artical {
     padding-left: 0px;
 }
-
-
-
-
-
 
 @media (max-width: 640.98px) {
     .top-row {

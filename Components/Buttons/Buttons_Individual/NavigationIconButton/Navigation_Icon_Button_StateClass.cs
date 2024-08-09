@@ -5,20 +5,17 @@ namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individu
 {
     public class Navigation_Icon_Button_StateClass
     {
-        
-
-        public string? button_Title { get; set; }
-        public string? button_Icon { get; set; }
-        public string? button_Icon_Color { get; set; }   
-        
+        public string? ButtonTitle { get; set; }
+        public string? ButtonIcon { get; set; }
+        public string? ButtonIconColor { get; set; }   
         public Action OnClickCallBack { get; set; }
 
-        public Navigation_Icon_Button_StateClass(string button_Title, string button_Icon, string button_Icon_Color, Action onClickCallBack)
+        public Navigation_Icon_Button_StateClass(string ButtonTitle, string ButtonIcon, string ButtonIconColor, Action OnClickCallBack)
         {
-            this.button_Title = button_Title;
-            this.button_Icon = button_Icon;
-            this.button_Icon_Color = button_Icon_Color;
-            this.OnClickCallBack = onClickCallBack;
+            this.ButtonTitle = ButtonTitle;
+            this.ButtonIcon = ButtonIcon;
+            this.ButtonIconColor = ButtonIconColor;
+            this.OnClickCallBack = OnClickCallBack;
         }
     }
 }

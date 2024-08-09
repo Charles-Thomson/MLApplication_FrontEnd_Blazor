@@ -2,6 +2,7 @@
 @layout MainLayout
 @inject ILogger<Home> Logger
 @rendermode InteractiveServer
+@using MachineLearningApplication_Build_2.wwwroot.TextContent;
 
 <div class="main-content">
         <div>
@@ -10,15 +11,15 @@
             <div class="resource-buttongroup-container">
             @foreach (Navigation_Icon_Button_StateClass buildData in @ResourceIconbutton_BuildData)
             {
-                <Navigation_Icon_button Button_Title=@buildData.button_Title 
-                                        Button_Icon=@buildData.button_Icon 
-                                        Button_Icon_Color=@buildData.button_Icon_Color
+                <Navigation_Icon_button Button_Title=@buildData.ButtonTitle
+                                        Button_Icon=@buildData.ButtonIcon
+                                        Button_Icon_Color=@buildData.ButtonIconColor
                                         OnClickCallBack=@buildData.OnClickCallBack />
             }
             </div>
 
             <div class="resource-buttongroup-drop-down-menu">
-                <DropDownMenu_Card CardBuildData=@SelectedCard>  </DropDownMenu_Card>
+            <DropDownMenu_Card  CardBuildData=@SelectedCard>  </DropDownMenu_Card>
             </div>
         </div>
 

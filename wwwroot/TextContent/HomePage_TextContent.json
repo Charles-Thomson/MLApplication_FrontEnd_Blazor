@@ -1,0 +1,14 @@
+{
+
+  "Supervised_Machine_Learning": {
+    "Definition": "Supervised Machine Learning is a type of machine learning where an algorithm is trained on labeled data, meaning the input data comes with corresponding output labels.",
+    "Goal": "The goal is for the algorithm to learn a mapping from inputs to outputs so that it can predict the correct label for new, unseen data.",
+    "Process": "This process involves feeding the algorithm with example input-output pairs during training, allowing it to learn the relationships and patterns that will help it make accurate predictions when faced with new data."
+  },
+
+  "Unsupervised_Machine_Learning": {
+    "Definition": "Supervised Machine Learning is a type of machine learning where an algorithm is trained on labeled data, meaning the input data comes with corresponding output labels.",
+    "Goal": "The goal is for the algorithm to learn a mapping from inputs to outputs so that it can predict the correct label for new, unseen data.",
+    "Process": "This process involves feeding the algorithm with example input-output pairs during training, allowing it to learn the relationships and patterns that will help it make accurate predictions when faced with new data."
+  }
+}
