@@ -27,15 +27,13 @@ namespace MachineLearningApplication_Build_2.Pages
         public List<Card_State_Class<HomePage_TextContentUnpackingClass>> CardBuildData { get; set; }
 
 
-        public Dictionary<string, string>? TextBlocks { get; set; }
+        public HomePageTextContent HomePage_TextContent { get; set; }
+        private JSONUnpackingService JSONUnpackingService { get; set; } = new();
 
-        public HomePageTextContent? HomePage_TextContent { get; set; }
+        private readonly string TextContentFilePath = "wwwroot/TextContent/HomePage_TextContent.json";
 
-        
         public Home() {
-
-            var jsonString = File.ReadAllText("wwwroot/TextContent/HomePage_TextContent.json");
-            HomePage_TextContent = JsonSerializer.Deserialize<HomePageTextContent>(jsonString);
+            HomePage_TextContent = JSONUnpackingService.UnpackTextContent<HomePageTextContent>(TextContentFilePath);
 
             DefaultCard = Generate_DefaultCard();
             CardBuildData = Generate_Card_BuildData();
@@ -50,7 +48,9 @@ namespace MachineLearningApplication_Build_2.Pages
         /// <param name="NewCardId">ID of the new Card to be displayed</param>
         public void UpdateSelectedCard(string NewCardId)
         {
-            Console.WriteLine($"CallBack recieved with {NewCardId}");
+            
+
+            Log.Information($"CALLBACK : Updating selected card -> ID: {NewCardId}");
            
             SelectedCard = CardBuildData.FirstOrDefault(p => p.CardId == NewCardId) ?? DefaultCard; ;
             StateHasChanged();
@@ -65,7 +65,6 @@ namespace MachineLearningApplication_Build_2.Pages
                     ButtonIcon: Icon,
                     ButtonIconColor: IconColor,
                     OnClickCallBack: OnClickCallBack
-
                 );
         }
 
@@ -93,12 +92,10 @@ namespace MachineLearningApplication_Build_2.Pages
         /// <returns>List of new Card State Objects</returns>
         public List<Card_State_Class<HomePage_TextContentUnpackingClass>> Generate_Card_BuildData()
         {
-
             List<Card_State_Class<HomePage_TextContentUnpackingClass>> NewCardBuildData = new() {
                 new(cardId: "Supervised_Card",
-                    cardTitle: "Supervised Learning (SL)",
-                    cardDescriptionText: "Holder",
-                    textContent: HomePage_TextContent.Unsupervised_Machine_Learning,
+                    cardTitle: "Supervised Learning (SL)",                   
+                    textContent: HomePage_TextContent.Supervised_Machine_Learning,
                     cardIconButton_BuildData: new() {
                         GenerateIconButtonStateClass("Supervised", "bi bi-person-check", "primary-color", () => UpdateSelectedCard("Supervised_Card") ),
                         GenerateIconButtonStateClass("Unsupervised", "bi bi-person-x",  "primary-color", () => UpdateSelectedCard("Supervised_Card") ),
@@ -108,8 +105,7 @@ namespace MachineLearningApplication_Build_2.Pages
                     ),
 
                 new(cardId: "Unsupervised_Card",
-                    cardTitle: "Unsupervised Learning (UL)",
-                    cardDescriptionText: "Description text",
+                    cardTitle: "Unsupervised Learning (UL)",                   
                     textContent: HomePage_TextContent.Unsupervised_Machine_Learning,
                     cardIconButton_BuildData: new() {
                         GenerateIconButtonStateClass("Supervised", "bi bi-person-check", "primary-color", () => UpdateSelectedCard("Supervised_Card")),
@@ -120,8 +116,7 @@ namespace MachineLearningApplication_Build_2.Pages
                     ),
                 new(cardId: "Regression_Card",
                     cardTitle: "Regression",
-                    cardDescriptionText: "Description text",
-                    textContent: HomePage_TextContent.Unsupervised_Machine_Learning,
+                    textContent: HomePage_TextContent.Regression_Machine_Learning,
                     cardIconButton_BuildData: new() {
                         GenerateIconButtonStateClass("Supervised", "bi bi-person-check", "primary-color", () => UpdateSelectedCard("Supervised_Card")),
                         GenerateIconButtonStateClass("Unsupervised", "bi bi-person-x",  "primary-color", () => UpdateSelectedCard("Supervised_Card")),
@@ -131,8 +126,7 @@ namespace MachineLearningApplication_Build_2.Pages
                     ),
                 new(cardId: "Classification_Card",
                     cardTitle: "Classification",
-                    cardDescriptionText: "Description text",
-                    textContent: HomePage_TextContent.Unsupervised_Machine_Learning,
+                    textContent: HomePage_TextContent.Classification_Machine_Learning,
                     cardIconButton_BuildData: new() {
                         GenerateIconButtonStateClass("Supervised", "bi bi-person-check", "primary-color", () => UpdateSelectedCard("Supervised_Card")),
                         GenerateIconButtonStateClass("Unsupervised", "bi bi-person-x",  "primary-color", () => UpdateSelectedCard("Supervised_Card")),
@@ -153,8 +147,7 @@ namespace MachineLearningApplication_Build_2.Pages
             return new(
                     cardId: "Card_Default",
                     cardTitle: "Default Card Title",
-                    cardDescriptionText: "Default",
-                    textContent: HomePage_TextContent.Unsupervised_Machine_Learning,
+                    textContent: HomePage_TextContent.Default_Card,
                     cardIconButton_BuildData: new() 
                 );
         }

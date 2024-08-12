@@ -6,9 +6,6 @@ namespace MachineLearningApplication_Build_2.Components.Cards
     {
         public string CardId { get; set; }
         public string CardTitle { get; set; } 
-
-        public string? CardDescriptionText { get; set; }
-
         public T? TextContent { get; set; } 
 
         public List<Navigation_Icon_Button_StateClass>? CardIconButton_BuildData { get; set; } 
@@ -17,19 +14,15 @@ namespace MachineLearningApplication_Build_2.Components.Cards
         public Card_State_Class(
                             string cardId,
                             string cardTitle,
-                            string cardDescriptionText,
-                            T textContent,
+                            
+                            T? textContent,
                             List<Navigation_Icon_Button_StateClass> cardIconButton_BuildData)
         {
-
             CardId = cardId;
             CardTitle = cardTitle;
-            CardDescriptionText = cardDescriptionText;
+            
             TextContent = textContent;
             CardIconButton_BuildData = cardIconButton_BuildData;
-
-
-
         }
     }
 }

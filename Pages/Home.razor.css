@@ -2,7 +2,7 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 20vh;
+    gap: 0.5rem;
     background-color: transparent;
     left: 0px;
     height: 100%;
@@ -12,17 +12,12 @@
     
 }
 
-.resource-buttongroup-drop-down-menu {
-    height: 20vh;
-    width: 100%;
-    padding-bottom: 100px;
-}
-
 .sub-headding {
     font-size: var(--sub-headding-size);
     color: black;
-    padding-bottom: 1rem;
+    padding-bottom: 10px;
 }
+
 
 .resource-buttongroup-container {
     display: flex;
@@ -30,18 +25,29 @@
     align-items: center;
     width: 100%;
     background-color: transparent;
-    padding: 1rem;  
+    padding: 1rem;
+    
+    background-color: transparent;
+}
+
+.resource-buttongroup-menu-container {
+   
+    background-color: red;
+    height: 40%;
+    width: 100%;
+    /*padding-bottom: 100px;*/
 }
 
 .documentation-group-container {
+    
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
     width: 100%;
     color: red;
-    background-color: transparent;
-    margin-top: auto;
+    background-color: green;
+    
 }
 
 

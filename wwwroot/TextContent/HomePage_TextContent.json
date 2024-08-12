@@ -1,5 +1,11 @@
 {
 
+  "Default_Card": {
+    "Definition": "Supervised Machine Learning is a type of machine learning where an algorithm is trained on labeled data, meaning the input data comes with corresponding output labels.",
+    "Goal": "The goal is for the algorithm to learn a mapping from inputs to outputs so that it can predict the correct label for new, unseen data.",
+    "Process": "This process involves feeding the algorithm with example input-output pairs during training, allowing it to learn the relationships and patterns that will help it make accurate predictions when faced with new data."
+  },
+
   "Supervised_Machine_Learning": {
     "Definition": "Supervised Machine Learning is a type of machine learning where an algorithm is trained on labeled data, meaning the input data comes with corresponding output labels.",
     "Goal": "The goal is for the algorithm to learn a mapping from inputs to outputs so that it can predict the correct label for new, unseen data.",
@@ -7,8 +13,20 @@
   },
 
   "Unsupervised_Machine_Learning": {
-    "Definition": "Supervised Machine Learning is a type of machine learning where an algorithm is trained on labeled data, meaning the input data comes with corresponding output labels.",
-    "Goal": "The goal is for the algorithm to learn a mapping from inputs to outputs so that it can predict the correct label for new, unseen data.",
-    "Process": "This process involves feeding the algorithm with example input-output pairs during training, allowing it to learn the relationships and patterns that will help it make accurate predictions when faced with new data."
+    "Definition": "Unsupervised machine learning is a type of algorithm that identifies patterns in data without any labeled outcomes or guidance. The model learns from the data by finding hidden structures, such as grouping similar data points (clustering) or reducing the dimensionality of the data.",
+    "Goal": "The goal of unsupervised machine learning is to explore the underlying structure of the data, often revealing insights, patterns, or relationships that are not immediately obvious. This can help in discovering groupings or simplifying data for further analysis.",
+    "Process": "The process typically involves feeding the algorithm with unlabeled data, allowing it to learn from the input, and then applying techniques such as clustering, association, or dimensionality reduction to identify patterns or structures. The outcomes are then analyzed to understand the discovered patterns and their significance."
+  },
+
+  "Regression_Machine_Learning": {
+    "Definition": "Regression learning is a type of supervised machine learning that predicts a continuous numerical output based on input features. The model learns the relationship between input variables and a target variable by analyzing labeled training data.",
+    "Goal": "The goal of regression learning is to develop a model that can accurately predict the value of a dependent variable based on one or more independent variables. This helps in making forecasts, identifying trends, or estimating unknown values.",
+    "Process": "The process involves training the model on a dataset with known input-output pairs. The model learns by minimizing the error between its predictions and the actual target values. Common techniques include linear regression, polynomial regression, and more advanced methods like support vector regression or neural networks. Once trained, the model is used to predict the output for new, unseen data."
+  },
+
+  "Classification_Machine_Learning": {
+    "Definition": "Classification is a supervised machine learning technique where the goal is to assign input data into predefined categories or classes. The model learns to differentiate between different classes based on labeled training data.",
+    "Goal": "The goal of classification is to accurately predict the class or category of new, unseen data based on the patterns learned from the training data. This helps in tasks such as spam detection, image recognition, or medical diagnosis.",
+    "Process": "The process involves training a model on a labeled dataset where the input data is associated with specific classes. The model learns to recognize patterns and relationships between the input features and the target class labels. Techniques such as decision trees, logistic regression, support vector machines, and neural networks are commonly used. After training, the model is tested on new data to classify it into the appropriate categories."
   }
 }

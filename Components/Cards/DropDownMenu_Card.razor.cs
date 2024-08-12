@@ -11,28 +11,19 @@ namespace MachineLearningApplication_Build_2.Components.Cards
 {
     public partial class DropDownMenu_Card<T>
     {
-
-
-        [Parameter] public Card_State_Class<T>? CardBuildData { get; set; }
-
-        
+        [Parameter] public required Card_State_Class<T> CardBuildData { get; set; }
 
         private HomePage_TextContentUnpackingClass? TextContentAsHomePageTextContentUnpackingClass
         {
             get
             {
-                if (CardBuildData.TextContent is HomePage_TextContentUnpackingClass textContent)
+                if (CardBuildData.TextContent is object textContent)
                 {
-                    return textContent;
+                    return (HomePage_TextContentUnpackingClass?)textContent;
                 }
                 return null;
             }
         }
 
-
-        public DropDownMenu_Card()
-        {
-           
-        }
     }
 }
