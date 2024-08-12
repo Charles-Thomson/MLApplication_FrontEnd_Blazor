@@ -9,9 +9,9 @@
     <h1 class="sub-headding">Resources</h1>
       
     <div class="resource-buttongroup-container">
-        @foreach (Navigation_Icon_Button_StateClass buildData in @ResourceIconbutton_BuildData)
+        @foreach (NavigationIconButton_StateClass buildData in @ResourceIconbutton_BuildData)
         {
-            <Navigation_Icon_button Button_Title=@buildData.ButtonTitle
+            <NavigationIconbutton Button_Title=@buildData.ButtonTitle
                                     Button_Icon=@buildData.ButtonIcon
                                     Button_Icon_Color=@buildData.ButtonIconColor
                                     OnClickCallBack=@buildData.OnClickCallBack />
@@ -19,15 +19,15 @@
     </div>
 
     <div class="resource-buttongroup-menu-container">
-        <DropDownMenu_Card T="HomePage_TextContentUnpackingClass" CardBuildData=@SelectedCard>  </DropDownMenu_Card>
+        <NavigationCardList  CardBuildData=@Selected_NavigationCardData />
     </div>
 
     <h1 class="sub-headding">Documentation</h1>
     <div class="documentation-group-container">
-        <Documentation_Card Card_Title="Supervised" Card_Body_Text=@Supervised_Learning_Card_Content> </Documentation_Card>
-        <Documentation_Card Card_Title="Unsupervised" Card_Body_Text=@Unsupervised_Learning_Card_Content />
-        <Documentation_Card Card_Title="Regression" Card_Body_Text=@Regression_Card_Content />
-        <Documentation_Card Card_Title="Classification" Card_Body_Text=@Classification_Learning_Card_Content />
+        <DocumentationCard Card_Title="Supervised" Card_Body_Text=@Supervised_Learning_Card_Content> </DocumentationCard>
+        <DocumentationCard Card_Title="Unsupervised" Card_Body_Text=@Unsupervised_Learning_Card_Content />
+        <DocumentationCard Card_Title="Regression" Card_Body_Text=@Regression_Card_Content />
+        <DocumentationCard Card_Title="Classification" Card_Body_Text=@Classification_Learning_Card_Content />
     </div>
 
 </div>

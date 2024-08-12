@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual.NavigationIconButton
 {
-    public partial class Navigation_Icon_button
+    public partial class NavigationIconbutton
     {
         [Parameter] public string? Button_Title { get; set; }
 

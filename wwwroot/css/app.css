@@ -101,6 +101,18 @@ h1:focus {
     width: 2rem;
 }
 
+.icon-size-small {
+    font-size: 1rem;
+}
+
+.icon-size-medium {
+    font-size: 2rem;
+}
+
+.icon-size-large {
+    font-size: 3rem;
+}
+
 .icon_white {
     color: white;
 }
@@ -124,6 +136,12 @@ h1:focus {
 .button-no-style {
     border: none;
     background-color: transparent;
+}
+
+.total-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 

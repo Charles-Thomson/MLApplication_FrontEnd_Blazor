@@ -4,19 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MachineLearningApplication_Build_2.wwwroot.TextContent;
 
 
 namespace MachineLearningApplication_Build_2.Components.Cards
 {
-    public partial class Documentation_Card
+    public partial class NavigationCardList
     {
-
-        [Parameter] public string? Card_Title { get; set; }
-
-        [Parameter] public string? Card_Body_Text { get; set; }
-        public Documentation_Card()
-        {
-
-        }
+        [Parameter] public required NavigationCardList_StateClass CardBuildData { get; set; }
     }
 }
+
