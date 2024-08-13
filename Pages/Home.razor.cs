@@ -3,11 +3,10 @@ using MachineLearningApplication_Build_2.Components.Cards;
 using MachineLearningApplication_Build_2.Services;
 using Microsoft.AspNetCore.Components;
 using Serilog;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Text.Json;
 using MachineLearningApplication_Build_2.wwwroot.TextContent;
-using Blazorise;
+using MachineLearningApplication_Build_2.Components.Cards.NavigationListCard;
+using MachineLearningApplication_Build_2.Components.Cards.ComponentListCard;
+
 
 
 namespace MachineLearningApplication_Build_2.Pages
@@ -27,11 +26,13 @@ namespace MachineLearningApplication_Build_2.Pages
         //public Card_State_Class<HomePage_TextContentUnpackingClass> SelectedCard { get; set; }
         //public List<Card_State_Class<HomePage_TextContentUnpackingClass>> CardBuildData { get; set; }
 
-        public List<NavigationCardList_StateClass> NavigationCardData { get; set; }
+        //public List<NavigationCardList_StateClass> NavigationCardData { get; set; }
 
-        public NavigationCardList_StateClass Selected_NavigationCardData { get; set; }
+        //public NavigationCardList_StateClass Selected_NavigationCardData { get; set; }
 
-        public NavigationCardList_StateClass NavigationCard_Default { get; set; }
+        //public NavigationCardList_StateClass NavigationCard_Default { get; set; }
+
+        
 
 
         public HomePageTextContent HomePage_TextContent { get; set; }
@@ -40,6 +41,10 @@ namespace MachineLearningApplication_Build_2.Pages
         private readonly string TextContentFilePath = "wwwroot/TextContent/HomePage_TextContent.json";
 
         public Home() {
+            
+
+
+
             NavigationCardData = CreateNavigationCardListData();
             
             ResourceIconbutton_BuildData = Generate_ResourceIconbutton_BuildData();
@@ -61,11 +66,11 @@ namespace MachineLearningApplication_Build_2.Pages
         /// <param name="NewCardId">ID of the new Card to be displayed</param>
         public void UpdateSelectedCard(string NewCardId)
         {
-            
+
 
             Log.Information($"CALLBACK : Updating selected card -> ID: {NewCardId}");
 
-            Selected_NavigationCardData = NavigationCardData.FirstOrDefault(p => p.CardId == NewCardId); ;
+            //Selected_NavigationCardData = NavigationCardData.FirstOrDefault(p => p.CardId == NewCardId); ;
             StateHasChanged();
         }
 
@@ -98,9 +103,92 @@ namespace MachineLearningApplication_Build_2.Pages
             return New_ResourceIconbutton_BuildData;
         }
 
-       
 
-        
+
+
+        /// <summary>
+        ///  Buil this list of Class items
+        /// </summary>
+        /// <returns></returns>
+
+        private List<ComponentListCardStateClass> CreateNavigationCardStateList() {
+
+
+            List<RenderFragment> RenList = BuildRenderFragments();
+
+            List<ComponentListCardStateClass> NewList = new List<ComponentListCardStateClass>
+            {
+
+                
+
+
+
+
+
+
+            };
+
+
+            return NewList;
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+        public List<RenderFragment> SelectedNavCard { get; set; }
+
+
+        private List<RenderFragment> BuildRenderFragments()
+        {
+
+            List<RenderFragment> RenList = new List<RenderFragment>() {
+                new RenderFragment(builder =>
+                    {
+                        builder.OpenComponent(0, typeof(IconAndDescritionHorizontal));
+                        builder.AddAttribute(1, "IconType", "bi bi-person-check");
+                        builder.AddAttribute(2, "IconColor", "primary-color");
+                        builder.AddAttribute(3, "IconSize", "icon-size-medium");
+                        builder.AddAttribute(3, "Description", "Hello");
+                        builder.CloseComponent();
+                    }),
+
+                new RenderFragment(builder =>
+                    {
+                        builder.OpenComponent(0, typeof(IconAndDescritionHorizontal));
+                        builder.AddAttribute(1, "IconType", "bi bi-person-check");
+                        builder.AddAttribute(2, "IconColor", "primary-color");
+                        builder.AddAttribute(3, "IconSize", "icon-size-medium");
+                        builder.AddAttribute(3, "Description", "Hello");
+                        builder.CloseComponent();
+                    }),
+                new RenderFragment(builder =>
+                    {
+                        builder.OpenComponent(0, typeof(IconAndDescritionHorizontal));
+                        builder.AddAttribute(1, "IconType", "bi bi-person-check");
+                        builder.AddAttribute(2, "IconColor", "primary-color");
+                        builder.AddAttribute(3, "IconSize", "icon-size-medium");
+                        builder.AddAttribute(3, "Description", "Hello");
+                        builder.CloseComponent();
+                    })
+            };
+
+
+            return RenList;
+        }
+
+
+
+
+
 
         private List<NavigationCardList_StateClass> CreateNavigationCardListData() 
         {
@@ -128,14 +216,14 @@ namespace MachineLearningApplication_Build_2.Pages
             };
 
             /// Need to build a list of the cards 
-            List<NavigationCardList_StateClass> newCardData = new List<NavigationCardList_StateClass>
-            {
-                new NavigationCardList_StateClass(cardId: "Supervised_Card", cardTitle:"Supervised Learning (SL)" , iconAndDescriptionCard_StateClasses:Supervised_List ),
-                new NavigationCardList_StateClass(cardId: "Unsupervised_Card", cardTitle:"Unsupervised Learning (UL)", iconAndDescriptionCard_StateClasses:Unsupervised_List ),
-                new NavigationCardList_StateClass(cardId: "Regression_Card", cardTitle:"Regression", iconAndDescriptionCard_StateClasses:Regression_List ),
-                new NavigationCardList_StateClass(cardId: "Classification_Card", cardTitle:"Classification", iconAndDescriptionCard_StateClasses:Classification_List )
+            //List<NavigationCardList_StateClass> newCardData = new List<NavigationCardList_StateClass>
+            //{
+            //    new NavigationCardList_StateClass(cardId: "Supervised_Card", cardTitle:"Supervised Learning (SL)" , iconAndDescriptionCard_StateClasses:Supervised_List ),
+            //    new NavigationCardList_StateClass(cardId: "Unsupervised_Card", cardTitle:"Unsupervised Learning (UL)", iconAndDescriptionCard_StateClasses:Unsupervised_List ),
+            //    new NavigationCardList_StateClass(cardId: "Regression_Card", cardTitle:"Regression", iconAndDescriptionCard_StateClasses:Regression_List ),
+            //    new NavigationCardList_StateClass(cardId: "Classification_Card", cardTitle:"Classification", iconAndDescriptionCard_StateClasses:Classification_List )
 
-            };
+            //};
             return newCardData;
 
         }
@@ -144,15 +232,15 @@ namespace MachineLearningApplication_Build_2.Pages
         /// Genertae the Default Card - to be shown on page load
         /// </summary>
         /// <returns> NavigationCardList_StateClass: Default Card </returns>
-        private NavigationCardList_StateClass CreateNavigationCardListData_Deafult() {
-            List<IconAndDescriptionCard_StateClass> Default_List = new List<IconAndDescriptionCard_StateClass> {
-                 new IconAndDescriptionCard_StateClass(IconType: "bi bi-person-check" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Default" ),
+        //private NavigationCardList_StateClass CreateNavigationCardListData_Deafult() {
+        //    List<IconAndDescriptionCard_StateClass> Default_List = new List<IconAndDescriptionCard_StateClass> {
+        //         new IconAndDescriptionCard_StateClass(IconType: "bi bi-person-check" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Default" ),
                 
-            };
+        //    };
 
-            return new NavigationCardList_StateClass(cardId: "Default_Card", cardTitle: string.Empty, iconAndDescriptionCard_StateClasses: Default_List);
+        //    return new NavigationCardList_StateClass(cardId: "Default_Card", cardTitle: string.Empty, iconAndDescriptionCard_StateClasses: Default_List);
 
-        }
+        //}
 
 
 
