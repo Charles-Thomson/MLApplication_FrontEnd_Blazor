@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MachineLearningApplication_Build_2.Components.Cards.IconAndDescriptionCard
 {
-    public partial class IconAndDescritionHorizontal : IconAndDescriptionComponentBase
+    public partial class IconAndDescriptionHorizontal : IconAndDescriptionComponentBase
     {
 
         [Parameter] required public string IconType { get; set; }

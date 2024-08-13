@@ -6,13 +6,16 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace MachineLearningApplication_Build_2.Components.Cards
+namespace MachineLearningApplication_Build_2.Components.Cards.IconAndDescriptionCard
 {
-    public partial class DefaultCard
+    public partial class IconAndDescriptionCentered : IconAndDescriptionComponentBase
     {
         [Parameter] required public string IconType { get; set; }
+
         [Parameter] required public string IconColor { get; set; }
+
         [Parameter] required public string IconSize { get; set; }
+
         [Parameter] required public string Description { get; set; }
     }
 }

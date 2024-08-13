@@ -113,6 +113,10 @@ h1:focus {
     font-size: 3rem;
 }
 
+.icon-size-Xlarge {
+    font-size: 5rem;
+}
+
 .icon_white {
     color: white;
 }

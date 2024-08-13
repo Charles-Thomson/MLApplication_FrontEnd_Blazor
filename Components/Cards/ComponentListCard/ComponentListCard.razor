@@ -1,10 +1,23 @@
 ﻿<div class="card-container">
+    
+    <div class="card-heading ">@CardTitle</div>
+    
 
     <div class="card-list-contaienr">
+        
 
-        @foreach (RenderFragment element in @RenderfragmentList)
+        @foreach (IconAndDescriptionStateClass element in @StateClass)
         {
-            @element
+            if (element.IconAndDescriptionCardType == "Horizontal")
+            {
+                <IconAndDescriptionHorizontal IconType=@element.IconType IconColor=@element.IconColor IconSize=@element.IconSize Description=@element.Description />
+            
+            }
+            if (element.IconAndDescriptionCardType == "Centered")
+            {
+                <IconAndDescriptionCentered IconType=@element.IconType IconColor=@element.IconColor IconSize=@element.IconSize Description=@element.Description />
+
+            }
         }
     </div>
 

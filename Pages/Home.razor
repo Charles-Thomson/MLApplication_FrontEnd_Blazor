@@ -19,9 +19,7 @@
     </div>
 
     <div class="resource-buttongroup-menu-container">
-        <NavigationCardList RenderfragmentList=@SelectedNavCard />
-        @* <IconAndDescritionHorizontal IconType = "bi bi-person-check"  IconColor = "primary-color" IconSize = "icon-size-medium" Description = "1" /> *@
-        
+        <ComponentListCard CardId=@SelectedComponentListCardStateClasses.CardId CardTitle="@SelectedComponentListCardStateClasses.CardTitle" StateClass="@SelectedComponentListCardStateClasses.StateClass" />
     </div>
 
     <h1 class="sub-headding">Documentation</h1>
