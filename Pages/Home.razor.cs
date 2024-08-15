@@ -7,7 +7,7 @@ using MachineLearningApplication_Build_2.wwwroot.TextContent;
 using MachineLearningApplication_Build_2.Components.Cards.IconAndDescriptionCard;
 using MachineLearningApplication_Build_2.Components.Cards.ComponentListCard;
 using Microsoft.AspNetCore.Components.Web;
-using MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual.ResourceIconButton;
+using MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClasses;
 
 
 
@@ -24,7 +24,7 @@ namespace MachineLearningApplication_Build_2.Pages
         public string Regression_Card_Content { get; private set; } = "Regression takes a set of input data and known outpus to train a model to determain the outcome of future input sets ...";
         public string Classification_Learning_Card_Content { get; private set; } = "Classification trains a model to desearn input data into a numebr of pre defined clasifications ...";
 
-        public List<ResourceIconButton_StateClass> ResourceIconbutton_BuildData { get; set; }
+        public List<IconButtonStateClass> ResourceIconbutton_BuildData { get; set; }
         
         public List<ComponentListCardStateClass> ComponentListCardStateClasses { get; set; }
 
@@ -68,23 +68,25 @@ namespace MachineLearningApplication_Build_2.Pages
         /// <param name="IconColor"></param>
         /// <param name="OnClickCallBack"></param>
         /// <returns> NavigationIconButton_StateClass </returns>
-        private ResourceIconButton_StateClass GenerateIconButtonStateClass(string Title, string Icon, string IconColor, Action OnClickCallBack) {
-            return new ResourceIconButton_StateClass(
+        private IconButtonStateClass GenerateIconButtonStateClass(string Title, string Icon, string IconColor, Action OnClickCallBack) {
+            return new IconButtonStateClass(
                     ButtonTitle: Title,
                     ButtonIcon: Icon,
                     ButtonIconColor: IconColor,
                     OnClickCallBack: OnClickCallBack
+                    
                 );
         }
+
 
 
         /// <summary>
         /// Generate the State Classes to store Icon Button data
         /// </summary>
         /// <returns>List of new Icon Button State objects</returns>
-        public List<ResourceIconButton_StateClass> GenerateResourceIconbuttonBuildData() {
+        public List<IconButtonStateClass> GenerateResourceIconbuttonBuildData() {
 
-            List<ResourceIconButton_StateClass> New_ResourceIconbutton_BuildData = new() {
+            List<IconButtonStateClass> New_ResourceIconbutton_BuildData = new() {
                 GenerateIconButtonStateClass("Supervised", "bi bi-person-check", "primary-color", () => UpdateSelectedCard("Supervised_Card")),
                 GenerateIconButtonStateClass("Unsupervised", "bi bi-person-x",  "primary-color", () => UpdateSelectedCard("Unsupervised_Card")),
                 GenerateIconButtonStateClass("Regression", "bi bi-bar-chart-line", "primary-color", () => UpdateSelectedCard("Regression_Card")),

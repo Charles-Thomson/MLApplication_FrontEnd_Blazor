@@ -18,6 +18,12 @@
         box-shadow: 0px 0px 6px var(--primary-color);
     }
 
+.active {
+    background-color: red;
+}
+
+    
+
 .button-icon {
     width: 100%; 
     font-size: var(--icon-button-icon-size);

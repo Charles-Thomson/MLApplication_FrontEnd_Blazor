@@ -2,18 +2,19 @@
 @layout MainLayout
 @inject ILogger<Home> Logger
 @rendermode InteractiveServer
-@using MachineLearningApplication_Build_2.wwwroot.TextContent;
+
+  
 
 <div class="main-content">
         
     <h1 class="sub-headding">Resources</h1>
       
     <div class="resource-buttongroup-container">
-        @foreach (ResourceIconButton_StateClass buildData in @ResourceIconbutton_BuildData)
+        @foreach (IconButtonStateClass buildData in @ResourceIconbutton_BuildData)
         {
-            <ResourceIconbutton Button_Title=@buildData.ButtonTitle
-                                    Button_Icon=@buildData.ButtonIcon
-                                    Button_Icon_Color=@buildData.ButtonIconColor
+            <ResourceIconbutton ButtonTitle=@buildData.ButtonTitle
+                                ButtonIcon=@buildData.ButtonIcon
+                                ButtonIconColor=@buildData.ButtonIconColor
                                     OnClickCallBack=@buildData.OnClickCallBack />
         }
     </div>

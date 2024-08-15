@@ -1,5 +1,4 @@
-﻿
-using MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual.ResourceIconButton;
+﻿using MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClasses;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using System;
@@ -13,7 +12,7 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
     public partial class Reinforcement
     {
 
-        public List<ResourceIconButton_StateClass> SideNavigationBuildData { get; set; }
+        public List<IconButtonStateClass> SideNavigationBuildData { get; set; }
 
         
         public Reinforcement()
@@ -31,9 +30,9 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
         /// <param name="IconColor"></param>
         /// <param name="OnClickCallBack"></param>
         /// <returns> NavigationIconButton_StateClass </returns>
-        private ResourceIconButton_StateClass GenerateIconButtonStateClass(string Title, string Icon, string IconColor, Action OnClickCallBack)
+        private IconButtonStateClass GenerateIconButtonStateClass(string Title, string Icon, string IconColor, Action OnClickCallBack)
         {
-            return new ResourceIconButton_StateClass(
+            return new IconButtonStateClass(
                     ButtonTitle: Title,
                     ButtonIcon: Icon,
                     ButtonIconColor: IconColor,
@@ -41,20 +40,21 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
                 );
         }
 
-        private List<ResourceIconButton_StateClass> CreateIconButtonBuildData() {
-            List<ResourceIconButton_StateClass> NewIconbuttonBuildData = new() {
-                GenerateIconButtonStateClass("", "bi bi-person-check", "primary-color", CallBackPlaceHolder),
-                GenerateIconButtonStateClass("", "bi bi-person-x",  "primary-color", CallBackPlaceHolder),
-                GenerateIconButtonStateClass("", "bi bi-bar-chart-line", "primary-color", CallBackPlaceHolder),
-                GenerateIconButtonStateClass("", "bi bi-collection", "primary-color", CallBackPlaceHolder),
+        private List<IconButtonStateClass> CreateIconButtonBuildData() {
+            List<IconButtonStateClass> NewIconbuttonBuildData = new() {
+                GenerateIconButtonStateClass("Information", "bi bi-info-square", "primary-color", () => CallBackPlaceHolder("Info")),
+                GenerateIconButtonStateClass("Hyperperameters", "bi bi bi-gear-fill", "primary-color", () => CallBackPlaceHolder("Hyperparameters")),
+                GenerateIconButtonStateClass("Environment", "bi bi-globe-americas",  "primary-color", () => CallBackPlaceHolder("Environment")),
+                GenerateIconButtonStateClass("Neural Network", "bi bi-share-fill", "primary-color", () => CallBackPlaceHolder("NeuralNetwork")),
+                GenerateIconButtonStateClass("Submit", "bi bi-send-fill", "primary-color", () => CallBackPlaceHolder("Submit")),
             };
 
             return NewIconbuttonBuildData;
 
         }
 
-        public void CallBackPlaceHolder() {
-            Console.WriteLine($"Call back recived : Value: ");
+        public void CallBackPlaceHolder(string val) {
+            Console.WriteLine($"Call back recived : Value: {val}");
         }
     }
 }

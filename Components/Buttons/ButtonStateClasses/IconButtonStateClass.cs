@@ -1,21 +1,24 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Security;
 
-namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual.ResourceIconButton
+namespace MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClasses
 {
-    public class ResourceIconButton_StateClass
+    public class IconButtonStateClass
     {
         public string? ButtonTitle { get; set; }
         public string? ButtonIcon { get; set; }
-        public string? ButtonIconColor { get; set; }   
+        public string? ButtonIconColor { get; set; }
         public Action OnClickCallBack { get; set; }
 
-        public ResourceIconButton_StateClass(string ButtonTitle, string ButtonIcon, string ButtonIconColor, Action OnClickCallBack)
+        
+
+        public IconButtonStateClass(string ButtonTitle, string ButtonIcon, string ButtonIconColor, Action OnClickCallBack)
         {
             this.ButtonTitle = ButtonTitle;
             this.ButtonIcon = ButtonIcon;
             this.ButtonIconColor = ButtonIconColor;
             this.OnClickCallBack = OnClickCallBack;
+            
         }
     }
 }

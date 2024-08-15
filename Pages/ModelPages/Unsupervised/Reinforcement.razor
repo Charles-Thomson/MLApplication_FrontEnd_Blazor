@@ -1,13 +1,28 @@
 ﻿@page "/unsupervised-reinforcement"
 @layout MainLayout
+@rendermode InteractiveServer
 
-<div class="side-navigation-button-group">
-    <SideNaviagationButtonGroup BuildData=@SideNavigationBuildData />
 
+
+<div class="side-navigation-group">
+    
+    <div class="side-group">
+        <div class="side-navigation-button-group">
+            <SideNaviagationButtonGroup BuildData=@SideNavigationBuildData />
+        </div>
+        <div class="side-navigation-butto-group-tool-tips-container">
+            <SideNavigationButtonGroupToolTips BuildData=@SideNavigationBuildData />
+        </div>
+    </div>
+    
+    <div class="side-navigation-content-area"></div>
 </div>
 
 
+
 <div class="main-content">
+
+    
     
     
 </div>

@@ -8,14 +8,12 @@ using System.Threading.Tasks;
 
 namespace MachineLearningApplication_Build_2.Components.ToolTips
 {
-    public partial class ToolTip
+    public partial class ToolTipRightScroll
     {
-
         [Parameter]
         public string? ToolTipText { get; set; }
 
         [Parameter]
         public RenderFragment? ChildContent { get; set; }
-
     }
 }
