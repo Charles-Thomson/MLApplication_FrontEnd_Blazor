@@ -1,4 +1,4 @@
-﻿using MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual.NavigationIconButton;
+﻿
 using MachineLearningApplication_Build_2.Components.Cards;
 using MachineLearningApplication_Build_2.Services;
 using Microsoft.AspNetCore.Components;
@@ -6,7 +6,9 @@ using Serilog;
 using MachineLearningApplication_Build_2.wwwroot.TextContent;
 using MachineLearningApplication_Build_2.Components.Cards.IconAndDescriptionCard;
 using MachineLearningApplication_Build_2.Components.Cards.ComponentListCard;
-using MachineLearningApplication_Build_2.Structs;
+using Microsoft.AspNetCore.Components.Web;
+using MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual.ResourceIconButton;
+
 
 
 
@@ -22,7 +24,7 @@ namespace MachineLearningApplication_Build_2.Pages
         public string Regression_Card_Content { get; private set; } = "Regression takes a set of input data and known outpus to train a model to determain the outcome of future input sets ...";
         public string Classification_Learning_Card_Content { get; private set; } = "Classification trains a model to desearn input data into a numebr of pre defined clasifications ...";
 
-        public List<NavigationIconButton_StateClass> ResourceIconbutton_BuildData { get; set; }
+        public List<ResourceIconButton_StateClass> ResourceIconbutton_BuildData { get; set; }
         
         public List<ComponentListCardStateClass> ComponentListCardStateClasses { get; set; }
 
@@ -34,7 +36,7 @@ namespace MachineLearningApplication_Build_2.Pages
         private readonly string TextContentFilePath = "wwwroot/TextContent/HomePage_TextContent.json";
 
         public Home() {
-            ResourceIconbutton_BuildData = Generate_ResourceIconbutton_BuildData();
+            ResourceIconbutton_BuildData = GenerateResourceIconbuttonBuildData();
 
             ComponentListCardStateClasses = CreateComponentListCardStateClass();
             SelectedComponentListCardStateClasses = CreateComponentListCardDefaultCard();
@@ -56,6 +58,8 @@ namespace MachineLearningApplication_Build_2.Pages
 
         public void NavigateTo(string url) => NavigationManager?.NavigateTo(url);
 
+        public void TestCall(string test) => Console.WriteLine($"Test call made {test}")
+;
         /// <summary>
         /// Helper function of the creation of NavigationIconButton_StateClass
         /// </summary>
@@ -64,8 +68,8 @@ namespace MachineLearningApplication_Build_2.Pages
         /// <param name="IconColor"></param>
         /// <param name="OnClickCallBack"></param>
         /// <returns> NavigationIconButton_StateClass </returns>
-        private NavigationIconButton_StateClass GenerateIconButtonStateClass(string Title, string Icon, string IconColor, Action OnClickCallBack) {
-            return new NavigationIconButton_StateClass(
+        private ResourceIconButton_StateClass GenerateIconButtonStateClass(string Title, string Icon, string IconColor, Action OnClickCallBack) {
+            return new ResourceIconButton_StateClass(
                     ButtonTitle: Title,
                     ButtonIcon: Icon,
                     ButtonIconColor: IconColor,
@@ -78,9 +82,9 @@ namespace MachineLearningApplication_Build_2.Pages
         /// Generate the State Classes to store Icon Button data
         /// </summary>
         /// <returns>List of new Icon Button State objects</returns>
-        public List<NavigationIconButton_StateClass> Generate_ResourceIconbutton_BuildData() {
+        public List<ResourceIconButton_StateClass> GenerateResourceIconbuttonBuildData() {
 
-            List<NavigationIconButton_StateClass> New_ResourceIconbutton_BuildData = new() {
+            List<ResourceIconButton_StateClass> New_ResourceIconbutton_BuildData = new() {
                 GenerateIconButtonStateClass("Supervised", "bi bi-person-check", "primary-color", () => UpdateSelectedCard("Supervised_Card")),
                 GenerateIconButtonStateClass("Unsupervised", "bi bi-person-x",  "primary-color", () => UpdateSelectedCard("Unsupervised_Card")),
                 GenerateIconButtonStateClass("Regression", "bi bi-bar-chart-line", "primary-color", () => UpdateSelectedCard("Regression_Card")),
@@ -98,24 +102,27 @@ namespace MachineLearningApplication_Build_2.Pages
         private List<ComponentListCardStateClass> CreateComponentListCardStateClass()
         {
             List<IconAndDescriptionStateClass> Supervised_List = new List<IconAndDescriptionStateClass> {
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal", IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Working Example" ),
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network" ),
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application" )
+                new(IconAndDescriptionCardType: "Horizontal", IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Example 1 ", OnClickCallBack: () => NavigateTo("/unsupervised-reinforcement") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets", OnClickCallBack: () => NavigateTo("") )
             };
             List<IconAndDescriptionStateClass> Unsupervised_List = new List<IconAndDescriptionStateClass> {
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Working Example" ),
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network" ),
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application" )
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Working Example", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application", OnClickCallBack: () => NavigateTo("") )
             };
             List<IconAndDescriptionStateClass> Regression_List = new List<IconAndDescriptionStateClass> {
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Working Example" ),
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network" ),
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application" )
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Working Example", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application", OnClickCallBack: () => NavigateTo(""))
             };
             List<IconAndDescriptionStateClass> Classification_List = new List<IconAndDescriptionStateClass> {
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Working Example" ),
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network" ),
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application" )
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Working Example", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application", OnClickCallBack: () => NavigateTo("") )
             };
 
           
@@ -136,7 +143,7 @@ namespace MachineLearningApplication_Build_2.Pages
         /// <returns>ComponentListCardStateClass</returns>
         private ComponentListCardStateClass CreateComponentListCardDefaultCard() {
             List<IconAndDescriptionStateClass> Default_List = new List<IconAndDescriptionStateClass> {
-                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Centered", IconType: "bi bi-arrow-up-square", IconColor: "secondary-color", IconSize: "icon-size-Xlarge", Description: "SELECT FROM OPTIONS ABOVE")
+                new IconAndDescriptionStateClass(IconAndDescriptionCardType: "Centered", IconType: "bi bi-arrow-up-square", IconColor: "secondary-color", IconSize: "icon-size-Xlarge", Description: "SELECT FROM OPTIONS ABOVE", OnClickCallBack: () => NavigateTo(""))
             };
 
             ComponentListCardStateClass newDefault = new ComponentListCardStateClass(cardId: "Default_Card", cardTitle: "", stateClass: Default_List);

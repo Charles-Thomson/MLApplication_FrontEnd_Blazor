@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Components\Buttons\Button_Groups\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 

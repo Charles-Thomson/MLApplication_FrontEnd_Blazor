@@ -9,9 +9,9 @@
     <h1 class="sub-headding">Resources</h1>
       
     <div class="resource-buttongroup-container">
-        @foreach (NavigationIconButton_StateClass buildData in @ResourceIconbutton_BuildData)
+        @foreach (ResourceIconButton_StateClass buildData in @ResourceIconbutton_BuildData)
         {
-            <NavigationIconbutton Button_Title=@buildData.ButtonTitle
+            <ResourceIconbutton Button_Title=@buildData.ButtonTitle
                                     Button_Icon=@buildData.ButtonIcon
                                     Button_Icon_Color=@buildData.ButtonIconColor
                                     OnClickCallBack=@buildData.OnClickCallBack />

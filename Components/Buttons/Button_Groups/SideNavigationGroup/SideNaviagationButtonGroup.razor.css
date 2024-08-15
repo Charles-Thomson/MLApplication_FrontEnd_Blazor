@@ -1,0 +1,17 @@
+﻿.button-group-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button-group-main-content {
+    border: solid 1px black;
+    text-align: center;
+    
+}

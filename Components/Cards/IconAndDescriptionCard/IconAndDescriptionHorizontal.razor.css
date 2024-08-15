@@ -16,6 +16,7 @@
 
 .description-container {
     width: 90%;
+    cursor: default;
 }
 
 .icon-container {

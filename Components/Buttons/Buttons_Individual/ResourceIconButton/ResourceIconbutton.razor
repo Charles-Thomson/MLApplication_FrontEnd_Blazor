@@ -1,4 +1,6 @@
 ﻿<button class="button-container" @onclick=@Handle_OnClickCallBack>
-    <i class="@Button_Icon button-icon @Button_Icon_Color @Button_Icon_Color var(@Button_Icon_Color)"></i>
+    <div class="button-icon">
+        <SingleIcon Icon="@Button_Icon" IconColor="@Button_Icon_Color" ></SingleIcon>
+    </div>
     <span class="button-icon-text">@Button_Title</span>
 </button>

@@ -1,0 +1,19 @@
+﻿.main-content {
+    position: fixed;
+    background-color: transparent;
+    padding-top: 2vh;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    z-index: 1;
+}
+
+.side-navigation-button-group {
+    position: fixed;
+    width: 3vw;
+    height: 20vh;
+    border: solid 1px black;
+    left: 0px;
+    z-index: 10;
+}
+

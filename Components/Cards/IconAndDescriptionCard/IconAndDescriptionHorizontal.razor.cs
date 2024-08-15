@@ -19,6 +19,13 @@ namespace MachineLearningApplication_Build_2.Components.Cards.IconAndDescription
 
         [Parameter] required public string Description { get; set; }
 
-        
+        [Parameter] required public Action OnClickCallBack { get; set; }
+
+        public void HandleOnClickCallBack() {
+            OnClickCallBack.Invoke();
+        }
+
+
+
     }
 }

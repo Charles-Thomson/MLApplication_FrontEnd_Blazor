@@ -1,0 +1,14 @@
+﻿<div class="button-group-main-content"> 
+    @foreach (ResourceIconButton_StateClass buildData in @BuildData)
+    {
+        <div class="button-group-main-content">
+            <ResourceIconbutton Button_Title=@buildData.ButtonTitle
+                                  Button_Icon=@buildData.ButtonIcon
+                                  Button_Icon_Color=@buildData.ButtonIconColor
+                                  OnClickCallBack=@buildData.OnClickCallBack />
+        </div>
+    }
+
+    
+        
+</div>

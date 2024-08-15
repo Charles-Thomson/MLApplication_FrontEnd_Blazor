@@ -20,12 +20,36 @@
     background-color: transparent;
     gap: 10px;
     padding: 1rem;
+    overflow: auto;
 }
 
 .card-heading {
     font-size: 1rem;
     font-weight: bold;
 }
+
+/* Apply to all scrollbars */
+/*::-webkit-scrollbar {
+    width: 12px;*/ /* Width of the scrollbar */
+/*}*/
+
+/* Track */
+/*::-webkit-scrollbar-track {
+    background: var(--primary-color);*/ /* Background of the scrollbar track */
+    /*border-radius: 10px;*/ /* Optional: Rounded corners */
+/*}*/
+
+/* Handle */
+/*::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);*/ /* Color of the scrollbar handle */
+    /*border-radius: 10px;*/ /* Optional: Rounded corners */
+    /*border: 1px solid #f1f1f1;*/ /* Optional: Border around the handle */
+/*}*/
+
+    /* Handle on hover */
+    /*::-webkit-scrollbar-thumb:hover {
+        background: #555;*/ /* Color of the scrollbar handle on hover */
+    /*}*/
 
 
 

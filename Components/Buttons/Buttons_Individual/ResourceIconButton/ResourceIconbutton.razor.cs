@@ -6,9 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual.NavigationIconButton
+namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual.ResourceIconButton
 {
-    public partial class NavigationIconbutton
+    public partial class ResourceIconbutton
     {
         [Parameter] public string? Button_Title { get; set; }
 
