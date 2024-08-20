@@ -3,24 +3,23 @@
        width: inherit;
        display: flex;
        flex-direction: column;
-       gap: 1rem;
-       padding: 1rem;
+       
+       padding-top: 1rem;
 }
 
 .side-bar-sub-page-title {
-    height: 20%;
+    height: 10%;
     width: 100%;
     text-align: start;
     font-weight: bold;
-    font-size: 2rem
+    font-size: 1.5rem;
+    color: var(--secondary-color);
 
 }
-
-
-
 .side-bar-sub-page-main-content {
-    height: 80%;
+    height: 90%;
     width: inherit;
     display: flex;
     flex-direction: column;
+    background-color: whitesmoke;
 }

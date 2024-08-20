@@ -2,7 +2,6 @@
 .sidebar-menu-group-container {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
     width: inherit;
     height: inherit;
     background-color: transparent;
@@ -12,18 +11,18 @@
 .sidebar-menu-button-group-container {
     display: flex;
     flex-direction: row;
-    width: 10%;
+    width:10%;
     height: 60%;
-    z-index: 1;
+    z-index: 2;
     transition: width 2s;
+    background-color: transparent;   
 }
-
-    /* Hover Effect for Button Group Container */
     .sidebar-menu-button-group-container:hover {
         width: 35%;
+        
     }
-
         .sidebar-menu-button-group-container:hover .sidebar-menu-tool-tips-group {
+            
             opacity: 1;
             transition: opacity 4s;
         }
@@ -35,7 +34,7 @@
     justify-content: center;
     background-color: transparent;
     transition: width 1s;
-    z-index: 2;
+    z-index: 4;
 }
 
 /* Sidebar Menu Tooltips Group */
@@ -44,12 +43,13 @@
     height: 100%;
     justify-content: space-evenly;
     align-items: center;
-    visibility: visible;
     opacity: 0;
     transition: opacity 1s;
-    z-index: 10;
+    z-index: 1;
     background-color: transparent;
     cursor: default;
+    pointer-events: none;
+    
 }
 
 /* Sidebar Menu Content Group */
@@ -60,3 +60,11 @@
     width: 90%;
     z-index: 4;
 }
+
+.side-bar-menu-content-group-hidden {
+    display: none; 
+}
+
+
+
+

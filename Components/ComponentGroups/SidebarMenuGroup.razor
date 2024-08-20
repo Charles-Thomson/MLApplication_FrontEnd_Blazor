@@ -1,5 +1,6 @@
 ﻿@rendermode InteractiveServer
 @using MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning
+
 <div class="sidebar-menu-group-container">
     <div class="sidebar-menu-button-group-container">
 
@@ -13,10 +14,8 @@
 
     </div>
 
-    <div Class="side-bar-menu-content-group">
-        @* @CurretPage *@
+    <div Class="@SubPageVisability">
         @CurrentDisplayedSubPage
-        @* <InformationSubPage PageTitle="Hello"/> *@
     </div>
 
 </div>

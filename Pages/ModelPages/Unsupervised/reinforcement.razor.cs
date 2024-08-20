@@ -14,17 +14,14 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
     public partial class Reinforcement
     {
 
-        public List<IconButtonStateClass> SideNavigationBuildData { get; set; }
+        
 
-        public List<SideBarMenuStateClass> NewSideNavBuildData { get; set; }
+        public List<SideBarMenuStateClass> SideNavigationBuildData { get; set; }
 
 
         public Reinforcement()
         {
-            
-            SideNavigationBuildData = CreateIconButtonBuildData();
-            NewSideNavBuildData = GenerateSideBarMenuStateClass();
-
+            SideNavigationBuildData = GenerateSideBarMenuStateClass();
         }
 
         /// <summary>
@@ -35,17 +32,31 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
         /// <param name="IconColor"></param>
         /// <param name="OnClickCallBack"></param>
         /// <returns> NavigationIconButton_StateClass </returns>
-        private IconButtonStateClass GenerateIconButtonStateClass(string Title, string Icon, string IconColor, Action OnClickCallBack)
+        private IconButtonStateClass GenerateIconButtonStateClass(string Title, string Icon, string IconColor, Action? OnClickCallBack = null)
         {
             return new IconButtonStateClass(
                     ButtonTitle: Title,
                     ButtonIcon: Icon,
-                    ButtonIconColor: IconColor
-                    //OnClickCallBack: OnClickCallBack
+                    ButtonIconColor: IconColor,
+                    OnClickCallBack: OnClickCallBack
                 );
         }
 
+        //private SideBarMenuStateClass GenerateSideBarMenuStateClass(string ClassId, string ToolTipText, IconButtonStateClass ButtonBuildData, RenderFragment SubPageContent)
+        //{
+        //    return new SideBarMenuStateClass(
+        //            ClassId: ClassId,
+        //            ToolTipText: ToolTipText,
+        //            ButtonBuildData: ButtonBuildData,
+        //            SubPageContent: SubPageContent
+        //        );
+        //}
 
+
+        /// <summary>
+        /// Generate build data (State classes) for the SideBarMenu
+        /// </summary>
+        /// <returns> List<SideBarMenuStateClass> </returns>
         private List<SideBarMenuStateClass> GenerateSideBarMenuStateClass()
         {
             RenderFragment InformationPageRnderFragment = builder => {
@@ -54,9 +65,9 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
                 builder.CloseComponent();
             };
 
-            RenderFragment HyperperametersPageRnderFragment = builder => {
+            RenderFragment HyperparametersPageRnderFragment = builder => {
                 builder.OpenComponent(0, typeof(InformationSubPage));
-                builder.AddAttribute(1, "PageTitle", "Hyperperameters");
+                builder.AddAttribute(1, "PageTitle", "Hyperparameters");
                 builder.CloseComponent();
             };
 
@@ -78,47 +89,21 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
                 builder.CloseComponent();
             };
 
-
-
-
-            IconButtonStateClass ButtonStateData_Information = GenerateIconButtonStateClass("Information", "bi bi-info-square", "primary-color", () => CallBackPlaceHolder("Info"));
-            IconButtonStateClass ButtonStateData_Hyperperameters = GenerateIconButtonStateClass("Hyperperameters", "bi bi bi-gear-fill", "primary-color", () => CallBackPlaceHolder("Hyperparameters"));
-            IconButtonStateClass ButtonStateData_Environment = GenerateIconButtonStateClass("Environment", "bi bi-globe-americas", "primary-color", () => CallBackPlaceHolder("Environment"));
-            IconButtonStateClass ButtonStateData_Neural_Network = GenerateIconButtonStateClass("Neural Network", "bi bi-share-fill", "primary-color", () => CallBackPlaceHolder("NeuralNetwork"));
-            IconButtonStateClass ButtonStateData_Submit = GenerateIconButtonStateClass("Submit", "bi bi-send-fill", "primary-color", () => CallBackPlaceHolder("Submit"));
+            IconButtonStateClass ButtonStateData_Information = GenerateIconButtonStateClass("Information", "bi bi-info-square", "primary-color");
+            IconButtonStateClass ButtonStateData_Hyperparameters = GenerateIconButtonStateClass("Hyperparameters", "bi bi bi-gear-fill", "primary-color");
+            IconButtonStateClass ButtonStateData_Environment = GenerateIconButtonStateClass("Environment", "bi bi-globe-americas", "primary-color");
+            IconButtonStateClass ButtonStateData_Neural_Network = GenerateIconButtonStateClass("Neural Network", "bi bi-share-fill", "primary-color");
+            IconButtonStateClass ButtonStateData_Submit = GenerateIconButtonStateClass("Submit", "bi bi-send-fill", "primary-color");
 
             List<SideBarMenuStateClass> newBuildData = new List<SideBarMenuStateClass> {
                 new SideBarMenuStateClass(ClassId: "Information", ToolTipText: "Information", ButtonBuildData: ButtonStateData_Information, SubPageContent: InformationPageRnderFragment),
-                new SideBarMenuStateClass(ClassId: "Hyperperameters", ToolTipText: "Hyperperameters",ButtonBuildData: ButtonStateData_Hyperperameters, SubPageContent: HyperperametersPageRnderFragment),
+                new SideBarMenuStateClass(ClassId: "Hyperparameters", ToolTipText: "Hyperparameters",ButtonBuildData: ButtonStateData_Hyperparameters, SubPageContent: HyperparametersPageRnderFragment),
                 new SideBarMenuStateClass(ClassId: "Environment", ToolTipText: "Environment",ButtonBuildData: ButtonStateData_Environment, SubPageContent: EnvironmentPageRnderFragment),
                 new SideBarMenuStateClass(ClassId: "Neural Network", ToolTipText: "Neural Network",ButtonBuildData: ButtonStateData_Neural_Network, SubPageContent: NeuralNetworkPageRnderFragment),
                 new SideBarMenuStateClass(ClassId: "Submit", ToolTipText: "Submit",ButtonBuildData: ButtonStateData_Submit, SubPageContent: SubmitPageRnderFragment)
             };
 
-
             return newBuildData;
-        }
-
-
-
-        /// <summary>
-        ///  Add the Render Fragmets into this state class build
-
-        private List<IconButtonStateClass> CreateIconButtonBuildData() {
-            List<IconButtonStateClass> NewIconbuttonBuildData = new() {
-                GenerateIconButtonStateClass("Information", "bi bi-info-square", "primary-color", () => CallBackPlaceHolder("Info")),
-                GenerateIconButtonStateClass("Hyperperameters", "bi bi bi-gear-fill", "primary-color", () => CallBackPlaceHolder("Hyperparameters")),
-                GenerateIconButtonStateClass("Environment", "bi bi-globe-americas",  "primary-color", () => CallBackPlaceHolder("Environment")),
-                GenerateIconButtonStateClass("Neural Network", "bi bi-share-fill", "primary-color", () => CallBackPlaceHolder("NeuralNetwork")),
-                GenerateIconButtonStateClass("Submit", "bi bi-send-fill", "primary-color", () => CallBackPlaceHolder("Submit")),
-            };
-
-            return NewIconbuttonBuildData;
-
-        }
-
-        public void CallBackPlaceHolder(string val) {
-            Console.WriteLine($"Call back recived : Value: {val}");
         }
     }
 }
