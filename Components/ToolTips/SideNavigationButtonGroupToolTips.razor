@@ -1,8 +1,8 @@
 ﻿<div class="side-naiation-tool-tip-container">
-    @foreach (IconButtonStateClass data in @BuildData)
+    @foreach (string ToolTipText in @BuildData)
     {
         <div class ="tool-tip-text ">
-            @data.ButtonTitle
+            @ToolTipText
         </div>
     
     }

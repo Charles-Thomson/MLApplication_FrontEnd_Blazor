@@ -1,0 +1,22 @@
+﻿@rendermode InteractiveServer
+@using MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning
+<div class="sidebar-menu-group-container">
+    <div class="sidebar-menu-button-group-container">
+
+        <div class="sidebar-menu-button-group">
+            <SideNaviagationButtonGroup BuildData=@ButtonBuildData />
+        </div>
+
+        <div class="sidebar-menu-tool-tips-group">
+            <SideNavigationButtonGroupToolTips BuildData=@ToolTipBuildData />
+        </div>
+
+    </div>
+
+    <div Class="side-bar-menu-content-group">
+        @* @CurretPage *@
+        @CurrentDisplayedSubPage
+        @* <InformationSubPage PageTitle="Hello"/> *@
+    </div>
+
+</div>

@@ -11,6 +11,6 @@ namespace MachineLearningApplication_Build_2.Components.ToolTips
 {
     public partial class SideNavigationButtonGroupToolTips
     {
-        [Parameter] public List<IconButtonStateClass>? BuildData { get; set; }
+        [Parameter] public List<string>? BuildData { get; set; }
     }
 }

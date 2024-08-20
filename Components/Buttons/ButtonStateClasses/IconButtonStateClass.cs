@@ -8,11 +8,11 @@ namespace MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClass
         public string? ButtonTitle { get; set; }
         public string? ButtonIcon { get; set; }
         public string? ButtonIconColor { get; set; }
-        public Action OnClickCallBack { get; set; }
+        public Action? OnClickCallBack { get; set; }
 
         
 
-        public IconButtonStateClass(string ButtonTitle, string ButtonIcon, string ButtonIconColor, Action OnClickCallBack)
+        public IconButtonStateClass(string ButtonTitle, string ButtonIcon, string ButtonIconColor, Action? OnClickCallBack = null)
         {
             this.ButtonTitle = ButtonTitle;
             this.ButtonIcon = ButtonIcon;
