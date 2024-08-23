@@ -1,0 +1,22 @@
+﻿.drop-down-input-field {
+    width: 100%;
+    background-color: whitesmoke;
+    border: solid 1px var(--primary-color);
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding-left: 1rem;
+}
+
+    .drop-down-input-field:focus {
+        width: 100%;
+        border-radius: 3px;
+        outline-width: 1px;
+        outline-color: var(--primary-color);
+    }
+
+label {
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--secondary-color);
+}

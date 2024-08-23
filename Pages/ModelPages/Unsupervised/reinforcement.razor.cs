@@ -66,19 +66,19 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
             };
 
             RenderFragment HyperparametersPageRnderFragment = builder => {
-                builder.OpenComponent(0, typeof(InformationSubPage));
+                builder.OpenComponent(0, typeof(HyperparametersSubPage));
                 builder.AddAttribute(1, "PageTitle", "Hyperparameters");
                 builder.CloseComponent();
             };
 
             RenderFragment EnvironmentPageRnderFragment = builder => {
-                builder.OpenComponent(0, typeof(InformationSubPage));
+                builder.OpenComponent(0, typeof(EnvironmentSubPage));
                 builder.AddAttribute(1, "PageTitle", "Environment");
                 builder.CloseComponent();
             };
 
             RenderFragment NeuralNetworkPageRnderFragment = builder => {
-                builder.OpenComponent(0, typeof(InformationSubPage));
+                builder.OpenComponent(0, typeof(NeuralNetworkSubPage));
                 builder.AddAttribute(1, "PageTitle", "Neural Network");
                 builder.CloseComponent();
             };

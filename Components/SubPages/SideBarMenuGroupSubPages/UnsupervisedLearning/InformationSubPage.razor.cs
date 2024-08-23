@@ -1,15 +1,18 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+using MachineLearningApplication_Build_2.wwwroot.TextContent;
 
 namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning
 {
     public partial class InformationSubPage
     {
-        [Parameter] public string PageTitle { get; set; }
+        [Parameter] public string? PageTitle { get; set; }
+
+        public InfomartionPageTextContent TextContent { get; set; }
+
+        public InformationSubPage() {
+            
+        
+        }
     }
 }
+

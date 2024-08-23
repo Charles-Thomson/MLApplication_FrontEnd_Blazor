@@ -5,7 +5,7 @@ namespace MachineLearningApplication_Build_2.Services
 {
     public class InstanceAttributeStateContainer
     {
-        public string? InstanceName { get; set; } = "Place Holder";
+        public string? InstanceName { get; set; } = "New Holder";
 
 
         /// <summary>

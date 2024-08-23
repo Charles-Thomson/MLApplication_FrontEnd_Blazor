@@ -3,8 +3,8 @@
        width: inherit;
        display: flex;
        flex-direction: column;
-       
        padding-top: 1rem;
+       padding: 1rem;
 }
 
 .side-bar-sub-page-title {
@@ -16,10 +16,12 @@
     color: var(--secondary-color);
 
 }
+
+
 .side-bar-sub-page-main-content {
     height: 90%;
     width: inherit;
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke;
+    background-color: white;
 }

@@ -6,6 +6,8 @@ using Blazorise;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
 using Blazorise.Bootstrap;
+using MachineLearningApplication_Build_2.Services.ReinforcementLearningServices;
+using MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning;
 
 
 
@@ -37,6 +39,7 @@ builder.Services
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["BaseAddress"] ?? "https://localhost") });
 
 builder.Services.AddSingleton<InstanceAttributeStateContainer>();
+builder.Services.AddSingleton<NerualNetworkOptions>();
 
 
 builder.AddBlazrRenderStateServerServices(); // Acess to render services ?

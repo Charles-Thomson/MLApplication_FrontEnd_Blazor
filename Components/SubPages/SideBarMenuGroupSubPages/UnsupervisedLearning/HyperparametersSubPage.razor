@@ -1,0 +1,26 @@
+﻿
+@inject Services.InstanceAttributeStateContainer stateContainer
+<SideBarMenuGroupSubPageLayout Title="@PageTitle">
+    <div class="hyperparameter-sub-page-main-content">
+        
+        <TextInputWithLabel LabelText="Instance Name" BindValue=@stateContainer.InstanceName ValueChangedCallBack="@(value => stateContainer.InstanceName = value)" />
+  
+        <SubHeadingUnderlined SubHeadingText="Generation Variables" />
+
+        <TextInputWithLabel LabelText="Number Of Generations" BindValue=@stateContainer.NumberOfGenerations ValueChangedCallBack="@(value => stateContainer.NumberOfGenerations = value)" />
+        
+        <TextInputWithLabel LabelText="Agents Per Generation" BindValue=@stateContainer.AgentsPerGeneration ValueChangedCallBack="@(value => stateContainer.AgentsPerGeneration = value)" />
+
+        <TextInputWithLabel LabelText="New Generation Threshold" BindValue=@stateContainer.StartNewGenerationThreshold ValueChangedCallBack="@(value => stateContainer.StartNewGenerationThreshold = value)" />
+    
+        <TextInputWithLabel LabelText="Generation Failure Threshold" BindValue=@stateContainer.GenerationFailureThreshold ValueChangedCallBack="@(value => stateContainer.GenerationFailureThreshold = value)" />
+
+        <SubHeadingUnderlined SubHeadingText="Fitness & Actions" />
+
+        <TextInputWithLabel LabelText="Starting Fitness Threshold" BindValue=@stateContainer.StartingFitnessThreshold ValueChangedCallBack="@(value => stateContainer.StartingFitnessThreshold = value)" />
+    
+        <TextInputWithLabel LabelText="Maximum Number Of Actions" BindValue=@stateContainer.EnvironmentMaxActionCount ValueChangedCallBack="@(value => stateContainer.EnvironmentMaxActionCount = value)" />
+        
+        </div>
+    
+</SideBarMenuGroupSubPageLayout>

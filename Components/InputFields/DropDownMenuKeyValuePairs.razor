@@ -1,0 +1,10 @@
+﻿<div>
+    <label>@LabelText</label>
+    <select class="drop-down-input-field" @onchange=@OnValueChanged>
+        @foreach (var item in @DropDownOptions)
+        {
+            <option value="@item.Key">@item.Value</option>
+        }
+    </select>
+
+</div>
