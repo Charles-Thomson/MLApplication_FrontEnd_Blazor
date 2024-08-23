@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="wwwroot\TextContent\HomePage_TextContentUnpackingClass.cs" />
+    <Compile Include="wwwroot\TextContent\TextContentClass.cs" />
   </ItemGroup>
 
   <ItemGroup>

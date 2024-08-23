@@ -30,10 +30,10 @@ namespace MachineLearningApplication_Build_2.Pages
 
         public ComponentListCardStateClass SelectedComponentListCardStateClasses { get; set; }
 
-        public HomePageTextContent HomePage_TextContent { get; set; }
-        private JSONUnpackingService JSONUnpackingService { get; set; } = new();
+        //public HomePageTextContent HomePage_TextContent { get; set; }
+        //private JSONUnpackingService JSONUnpackingService { get; set; } = new();
 
-        private readonly string TextContentFilePath = "wwwroot/TextContent/HomePage_TextContent.json";
+        //private readonly string TextContentFilePath = "wwwroot/TextContent/HomePage_TextContent.json";
 
         public Home() {
             ResourceIconbutton_BuildData = GenerateResourceIconbuttonBuildData();

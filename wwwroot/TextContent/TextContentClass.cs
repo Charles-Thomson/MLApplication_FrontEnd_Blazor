@@ -2,7 +2,7 @@
 {
 
     
-    public class HomePage_TextContentUnpackingClass
+    public class TextContentClass
     {
         public string? Definition { get; set; }
         public string? Goal { get; set; }
@@ -11,11 +11,11 @@
 
     public class HomePageTextContent
     {
-        public HomePage_TextContentUnpackingClass? Default_Card { get; set; }
-        public HomePage_TextContentUnpackingClass? Supervised_Machine_Learning { get; set; }
-        public HomePage_TextContentUnpackingClass? Unsupervised_Machine_Learning { get; set; }
-        public HomePage_TextContentUnpackingClass? Regression_Machine_Learning { get; set; }
-        public HomePage_TextContentUnpackingClass? Classification_Machine_Learning { get; set; }
+        public TextContentClass? Default_Card { get; set; }
+        public TextContentClass? Supervised_Machine_Learning { get; set; }
+        public TextContentClass? Unsupervised_Machine_Learning { get; set; }
+        public TextContentClass? Regression_Machine_Learning { get; set; }
+        public TextContentClass? Classification_Machine_Learning { get; set; }
 
     }
 
