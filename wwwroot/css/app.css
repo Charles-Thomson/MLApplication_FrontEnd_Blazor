@@ -37,9 +37,9 @@
 @media (min-width: 2000px) {
     :root {
         --main-content-margin-padding: 30vw;
+     }
     }
-    }
-}
+
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

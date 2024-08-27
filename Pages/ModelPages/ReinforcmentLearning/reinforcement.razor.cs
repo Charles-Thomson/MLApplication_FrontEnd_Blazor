@@ -14,7 +14,9 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.ReinforcmentLearni
     public partial class Reinforcement
     {
 
-        
+        public int environmentDimension_X { get; set; } = 5;
+        public int environmentDimension_Y { get; set; } = 5;
+
 
         public List<SideBarMenuStateClass> SideNavigationBuildData { get; set; }
 

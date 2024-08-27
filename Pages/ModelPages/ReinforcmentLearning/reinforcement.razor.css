@@ -1,12 +1,16 @@
 ﻿.main-content {
     position: fixed;
     background-color: transparent;
-    padding-top: 2vh;
-    height: 100%;
+    height: 95%;
     width: 100%;
     left: 0px;
     z-index: 1;
+    margin-left: 3rem;
+    align-content: center;
+    justify-content: center;
 }
+
+
 
 
 .side-bar-menu-group-location {

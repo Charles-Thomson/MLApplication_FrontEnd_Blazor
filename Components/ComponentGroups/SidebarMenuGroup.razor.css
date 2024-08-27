@@ -11,17 +11,15 @@
 .sidebar-menu-button-group-container {
     display: flex;
     flex-direction: row;
-    width:10%;
+    width: 10%;
     height: 100%;
-    
-
     z-index: 2;
     transition: width 2s;
-    background-color: transparent;   
-    
+    background-color: transparent;
+    transform-origin: left;
 }
     .sidebar-menu-button-group-container:hover {
-        width: 35%;
+        transform: scaleX(2);
         
     }
         .sidebar-menu-button-group-container:hover .sidebar-menu-tool-tips-group  {
