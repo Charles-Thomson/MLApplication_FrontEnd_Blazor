@@ -1,8 +1,10 @@
 ﻿@rendermode InteractiveServer
-@using MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning
+@inject IJSRuntime JS
+@using MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.ReinforcementLearning
 
-<div class="sidebar-menu-group-container">
-    <div class="sidebar-menu-button-group-container">
+<div id="sidebar-menu-group-container" class="sidebar-menu-group-container">
+
+    <div id="sidebar-menu-button-group-container" class="sidebar-menu-button-group-container">
 
         <div class="sidebar-menu-button-group">
             <SideNaviagationButtonGroup BuildData=@ButtonBuildData />
@@ -13,9 +15,13 @@
         </div>
 
     </div>
-
-    <div Class="@SubPageVisability">
-        @CurrentDisplayedSubPage
+    <div id="opacity-filter" class="opacity-filter">
+        <div class="@SubPageVisability ">
+            @CurrentDisplayedSubPage
+        </div>
     </div>
 
 </div>
+
+
+

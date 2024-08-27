@@ -4,7 +4,7 @@
 
 <SideBarMenuGroupSubPageLayout Title="@PageTitle">
 
-    <div class="neural-network-sub-page-main-content ">
+    <div class="sub-page-main-content ">
         <SubHeadingUnderlined SubHeadingText="Weight Initialization" />
 
         <DropDownMenuKeyValuePairs LabelText="Hidden Layer" BindValue="@stateContainer.HiddenLayerWeightInit" ValueChangedCallBack=@(value => stateContainer.HiddenLayerWeightInit = value) DropDownOptions=@NeuralNetworkOptions.HiddenLayerWeightInit_KVP/>

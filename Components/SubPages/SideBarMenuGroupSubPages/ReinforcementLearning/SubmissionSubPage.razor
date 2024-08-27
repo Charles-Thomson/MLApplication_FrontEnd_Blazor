@@ -1,0 +1,34 @@
+﻿@using MachineLearningApplication_Build_2.Components.SubHeadings;
+@inject Services.InstanceAttributeStateContainer stateContainer
+
+
+<SideBarMenuGroupSubPageLayout Title="@PageTitle">
+    <div class="sub-page-main-content">
+        <span>Review and Submit for processing</span>
+        <LabelWithAttributeTextHorizontal LabelText="Instance Name" ContentText="@stateContainer.InstanceName" />
+
+        <SubHeadingUnderlined SubHeadingText="Hyperperameters" />
+        <LabelWithAttributeTextHorizontal LabelText="Number Of Generations" ContentText="@stateContainer.NumberOfGenerations" />
+        <LabelWithAttributeTextHorizontal LabelText="Agents Per Generation" ContentText="@stateContainer.AgentsPerGeneration" />
+        <LabelWithAttributeTextHorizontal LabelText="Start New Generation Threshold" ContentText="@stateContainer.StartNewGenerationThreshold" />
+        <LabelWithAttributeTextHorizontal LabelText="Generation Failure Threshold" ContentText="@stateContainer.GenerationFailureThreshold" />
+        <LabelWithAttributeTextHorizontal LabelText="EnvironmentMaxActionCount" ContentText="@stateContainer.EnvironmentMaxActionCount" />
+        <LabelWithAttributeTextHorizontal LabelText="New Generation Creation Function" ContentText="@stateContainer.NewGenerationCreationFunction" />
+        
+        <SubHeadingUnderlined SubHeadingText="Neural Network" />
+        <LabelWithAttributeTextHorizontal LabelText="Hidden Layer Weight Init" ContentText="@stateContainer.HiddenLayerWeightInit" />
+        <LabelWithAttributeTextHorizontal LabelText="Output Layer Weight Init" ContentText="@stateContainer.OutputLayerWeightInit" />
+        <LabelWithAttributeTextHorizontal LabelText="Hidden Layer Activation Function" ContentText="@stateContainer.HiddenLayerActivationFunction" />
+        <LabelWithAttributeTextHorizontal LabelText="Output Layer Activation Function" ContentText="@stateContainer.OutputLayerActivationFunction" />
+        
+        <SubHeadingUnderlined SubHeadingText="Environment" />
+        <LabelWithAttributeTextHorizontal LabelText="EnvironmentDimension X" ContentText="@stateContainer.EnvironmentDimension_X" />
+        <LabelWithAttributeTextHorizontal LabelText="EnvironmentDimension Y" ContentText="@stateContainer.EnvironmentDimension_Y" />
+        <LabelWithAttributeTextHorizontal LabelText="Environment Start State" ContentText="@stateContainer.OutputLayerActivationFunction.ToString()" />
+
+        
+
+
+    </div>
+
+</SideBarMenuGroupSubPageLayout>

@@ -1,7 +1,7 @@
 ﻿@inject Services.InstanceAttributeStateContainer stateContainer
 <SideBarMenuGroupSubPageLayout Title="@PageTitle">
 
-    <div class="environment-sub-page-main-content">
+    <div class="sub-page-main-content">
         <SubHeadingUnderlined SubHeadingText="Environment Dimensions" />
     
         <DropDownMenu LabelText="X-Axis" BindValue="@stateContainer.EnvironmentDimension_X" ValueChangedCallBack=@(value => stateContainer.EnvironmentDimension_X = value) DropDownOptions="@EmvironmentDimensionOptions"/>

@@ -1,12 +1,6 @@
-﻿using Blazorise;
-using MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClasses;
-using MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning;
+﻿using MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClasses;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.JSInterop;
 
 
 namespace MachineLearningApplication_Build_2.Components.ComponentGroups
@@ -15,6 +9,8 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
     {
         //[Parameter] required public List<IconButtonStateClass> BuildData { get; set; }
 
+
+        [Inject] protected IJSRuntime JSRuntime { get; set; }
 
         private List<SideBarMenuStateClass>? _buildData;
         [Parameter]
@@ -30,10 +26,16 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         public List<IconButtonStateClass>? ButtonBuildData { get; set; }
         public List<string>? ToolTipBuildData { get; set; }
         public RenderFragment? CurrentDisplayedSubPage { get; set; }
-
-        public string CurrentlyDisplayedSubPageID { get; set; } = "";
-
+        public string CurrentlyDisplayedSubPageID { get; set; } = string.Empty;
         public string SubPageVisability { get; set; }
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                await JS.InvokeVoidAsync("addHoverEffect", "sidebar-menu-button-group-container", "opacity-filter");
+            }
+        }
 
 
         /// <summary>

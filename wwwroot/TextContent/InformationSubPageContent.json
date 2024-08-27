@@ -1,5 +1,5 @@
 {
-  "introduction": "This is the intro text",
-  "process": "This is the process text",
-  "goal":  "This is the goal text"
+  "introduction": "Reinforcement learning is a subsection of Machine Learning, in which an agent operates within an environment with the goal of maximizing cumulative rewards through trial and error. Rewards are predefined and often center around exploration and survival in the environment.",
+  "process": "The application allows for the neural network attributes oif a agent to be defined along side a two dimensional environment in which the agent will operate.",
+  "goal": "The overall goal of the process is to define a set off weights for an agent that allows for navigation to pre defined goals in an environment while avoiding negitive, or termiantion, elements in the environement"
 }

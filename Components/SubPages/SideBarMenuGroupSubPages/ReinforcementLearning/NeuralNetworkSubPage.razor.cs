@@ -6,10 +6,13 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning
+
+namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.ReinforcementLearning
 {
-    public partial class HyperparametersSubPage
+    public partial class NeuralNetworkSubPage
     {
         [Parameter] public string PageTitle { get; set; }
+
+
     }
 }

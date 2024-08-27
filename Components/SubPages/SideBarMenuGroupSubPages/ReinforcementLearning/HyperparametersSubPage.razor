@@ -2,7 +2,7 @@
 @inject Services.InstanceAttributeStateContainer stateContainer
 
 <SideBarMenuGroupSubPageLayout Title="@PageTitle">
-    <div class="hyperparameter-sub-page-main-content">
+    <div class="sub-page-main-content">
         
         <TextInputWithLabel LabelText="Instance Name" BindValue=@stateContainer.InstanceName ValueChangedCallBack="@(value => stateContainer.InstanceName = value)" />
   

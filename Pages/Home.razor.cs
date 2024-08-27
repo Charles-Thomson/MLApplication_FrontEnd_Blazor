@@ -89,6 +89,7 @@ namespace MachineLearningApplication_Build_2.Pages
             List<IconButtonStateClass> New_ResourceIconbutton_BuildData = new() {
                 GenerateIconButtonStateClass("Supervised", "bi bi-person-check", "primary-color", () => UpdateSelectedCard("Supervised_Card")),
                 GenerateIconButtonStateClass("Unsupervised", "bi bi-person-x",  "primary-color", () => UpdateSelectedCard("Unsupervised_Card")),
+                GenerateIconButtonStateClass("Reinforcement", "bi bi-shield-plus", "primary-color", () => UpdateSelectedCard("Classification_Card")),
                 GenerateIconButtonStateClass("Regression", "bi bi-bar-chart-line", "primary-color", () => UpdateSelectedCard("Regression_Card")),
                 GenerateIconButtonStateClass("Classification", "bi bi-collection", "primary-color", () => UpdateSelectedCard("Classification_Card")),
             };
@@ -127,11 +128,18 @@ namespace MachineLearningApplication_Build_2.Pages
                 new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application", OnClickCallBack: () => NavigateTo("") )
             };
 
-          
-        List<ComponentListCardStateClass> newCardData = new List<ComponentListCardStateClass>
+            List<IconAndDescriptionStateClass> Reinforcement_List = new List<IconAndDescriptionStateClass> {
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-cpu" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Working Example", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-share-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Neural Network", OnClickCallBack: () => NavigateTo("") ),
+                new(IconAndDescriptionCardType: "Horizontal",IconType: "bi bi-database-fill" , IconColor: "primary-color", IconSize: "icon-size-medium", Description: "Data sets & Application", OnClickCallBack: () => NavigateTo("") )
+            };
+
+
+            List<ComponentListCardStateClass> newCardData = new List<ComponentListCardStateClass>
             {
                 new ComponentListCardStateClass(cardId: "Supervised_Card", cardTitle:"Supervised Learning (SL)" , stateClass:Supervised_List ),
-                new ComponentListCardStateClass(cardId: "Unsupervised_Card", cardTitle:"Unsupervised Learning (UL)", stateClass:Unsupervised_List ),
+                new ComponentListCardStateClass(cardId: "Unsupervised_Card", cardTitle:"Reinforcement Learning (RL)", stateClass:Unsupervised_List ),
+                new ComponentListCardStateClass(cardId: "Reinforcement_Card", cardTitle:"Unsupervised Learning (UL)", stateClass:Reinforcement_List ),
                 new ComponentListCardStateClass(cardId: "Regression_Card", cardTitle:"Regression", stateClass:Regression_List ),
                 new ComponentListCardStateClass(cardId: "Classification_Card", cardTitle:"Classification", stateClass:Classification_List)
             };

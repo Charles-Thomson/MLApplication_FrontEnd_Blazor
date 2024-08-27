@@ -2,7 +2,7 @@
 using MachineLearningApplication_Build_2.wwwroot.TextContent;
 using MachineLearningApplication_Build_2.Services;
 
-namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning
+namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.ReinforcementLearning
 {
     public partial class InformationSubPage
     {

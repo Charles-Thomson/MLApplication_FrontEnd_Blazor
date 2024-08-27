@@ -1,6 +1,6 @@
 ﻿using MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClasses;
 using MachineLearningApplication_Build_2.Components.ComponentGroups;
-using MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.UnsupervisedLearning;
+using MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGroupSubPages.ReinforcementLearning;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
+namespace MachineLearningApplication_Build_2.Pages.ModelPages.ReinforcmentLearning
 {
     public partial class Reinforcement
     {
@@ -41,18 +41,6 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
                     OnClickCallBack: OnClickCallBack
                 );
         }
-
-        //private SideBarMenuStateClass GenerateSideBarMenuStateClass(string ClassId, string ToolTipText, IconButtonStateClass ButtonBuildData, RenderFragment SubPageContent)
-        //{
-        //    return new SideBarMenuStateClass(
-        //            ClassId: ClassId,
-        //            ToolTipText: ToolTipText,
-        //            ButtonBuildData: ButtonBuildData,
-        //            SubPageContent: SubPageContent
-        //        );
-        //}
-
-
         /// <summary>
         /// Generate build data (State classes) for the SideBarMenu
         /// </summary>
@@ -84,7 +72,7 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.Unsupervised
             };
 
             RenderFragment SubmitPageRnderFragment = builder => {
-                builder.OpenComponent(0, typeof(InformationSubPage));
+                builder.OpenComponent(0, typeof(SubmissionSubPage));
                 builder.AddAttribute(1, "PageTitle", "Submit");
                 builder.CloseComponent();
             };
