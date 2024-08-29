@@ -16,37 +16,52 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
 
         private int TotalNumberOfNodesInEnvironment { get; set; }
 
-        private int _currentEnvironmentDimension_X { get; set; }
-        private int _currentEnvironmentDimension_Y { get; set; }
+        //private int _currentEnvironmentDimension_X { get; set; }
+        //private int _currentEnvironmentDimension_Y { get; set; }
 
-        [CascadingParameter(Name = "CurrentEnvironmentDimension_X")]
-        public int CurrentEnvironmentDimension_X
-        {
-            get => _currentEnvironmentDimension_X;
-            set
-            {
-                _currentEnvironmentDimension_X = value;
-                UpdateEnvironmentDimensions(value, CurrentEnvironmentDimension_Y);
-            }
-        }
+        //[CascadingParameter(Name = "CurrentEnvironmentDimension_X")]
+        //public int CurrentEnvironmentDimension_X
+        //{
+        //    get => _currentEnvironmentDimension_X;
+        //    set
+        //    {
+        //        _currentEnvironmentDimension_X = value;
+        //        UpdateEnvironmentDimensions(value, CurrentEnvironmentDimension_Y);
+        //    }
+        //}
 
-        [CascadingParameter(Name = "CurrentEnvironmentDimension_Y")]
-        public int CurrentEnvironmentDimension_Y
-        {
-            get => _currentEnvironmentDimension_Y;
-            set
-            {
-                _currentEnvironmentDimension_Y = value;
-                UpdateEnvironmentDimensions(CurrentEnvironmentDimension_X, value);
-            }
+        //[CascadingParameter(Name = "CurrentEnvironmentDimension_Y")]
+        //public int CurrentEnvironmentDimension_Y
+        //{
+        //    get => _currentEnvironmentDimension_Y;
+        //    set
+        //    {
+        //        _currentEnvironmentDimension_Y = value;
+        //        UpdateEnvironmentDimensions(CurrentEnvironmentDimension_X, value);
+        //    }
+        //}
+
+        public int CurrentEnvironmentDimension_X = 2;
+
+        public int CurrentEnvironmentDimension_Y = 2;
+
+
+        public TwoDimensionMazeEnv() {
+            UpdateEnvironmentDimensions(2, 2);
+
+
         }
 
         public void UpdateEnvironmentDimensions(int CurrentEnvironmentDimension_X, int CurrentEnvironmentDimension_Y)
         {
             Log.Information($"Environment Dimensions being updated with values {CurrentEnvironmentDimension_X} - {CurrentEnvironmentDimension_Y}");
             TotalNumberOfNodesInEnvironment = CurrentEnvironmentDimension_X * CurrentEnvironmentDimension_Y;
+            Console.WriteLine($"Total number of new states : {TotalNumberOfNodesInEnvironment}");
 
-            stateContainer.EnvironmentNodeStateData = new List<int>(new int[TotalNumberOfNodesInEnvironment]);
+            //List<int> holder = new List<int>(5);
+
+            //stateContainer.EnvironmentNodeStateData = holder;
+
             EnvironmentNodesData = GenerateEnvironmentNodes(TotalNumberOfNodesInEnvironment);
         }
 

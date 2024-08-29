@@ -10,7 +10,7 @@ namespace MachineLearningApplication_Build_2.Components.InputFields
 {
     public partial class DropDownMenu
     {
-        [Parameter] public List<string> DropDownOptions { get; set; }
+        [Parameter] required public List<string> DropDownOptions { get; set; }
 
         [Parameter] public string? LabelText { get; set; }
         [Parameter] public string? BindValue { get; set; }

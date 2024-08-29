@@ -54,8 +54,8 @@ namespace MachineLearningApplication_Build_2.Services
         /// Environment Data
         /// </summary>
 
-        public string? EnvironmentDimension_X { get; set; } = "5";
-        public string? EnvironmentDimension_Y { get; set; } = "5";
+        public string? EnvironmentDimension_X { get; set; } = "2";
+        public string? EnvironmentDimension_Y { get; set; } = "2";
 
         public int EnvironmentStartState { get; set; } = 0;
 

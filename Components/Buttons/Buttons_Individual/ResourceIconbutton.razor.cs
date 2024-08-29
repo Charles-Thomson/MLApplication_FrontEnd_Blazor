@@ -15,7 +15,7 @@ namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individu
         [Parameter] public string? ButtonIcon { get; set; }
 
         [Parameter] public string? ButtonIconColor { get; set; }
-        [Parameter] public Action OnClickCallBack { get; set; }
+        [Parameter] required public Action OnClickCallBack { get; set; }
 
         
 
@@ -26,16 +26,5 @@ namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individu
             
 
         }
-
-        //private bool IsActive { get; set; }
-
-        //private void ToggleActive() {
-        //    IsActive = !IsActive;
-        
-        //}
-
-        //public string activeClass => IsActive? "active" : string.Empty;
-
-
     }
 }

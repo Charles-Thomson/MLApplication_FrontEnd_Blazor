@@ -10,9 +10,9 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
 {
     public partial class MazeNode
     {
-        public MazeNode()
-        {
+        [Parameter] required public int NodeID { get; set; }
+        [Parameter] required public string BackgroundColor { get; set; }
 
-        }
+        [Parameter] public EventCallback<string> OnClickCallBack { get; set; }
     }
 }

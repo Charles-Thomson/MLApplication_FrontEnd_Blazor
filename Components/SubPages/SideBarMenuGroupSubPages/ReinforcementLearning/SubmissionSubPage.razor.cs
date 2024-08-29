@@ -10,6 +10,6 @@ namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGrou
 {
     public partial class SubmissionSubPage
     {
-        [Parameter] public string? PageTitle { get; set; }
+        [Parameter] required public string? PageTitle { get; set; }
     }
 }

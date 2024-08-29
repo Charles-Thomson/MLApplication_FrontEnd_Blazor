@@ -5,9 +5,11 @@
     <div style="grid-template-columns: repeat(@CurrentEnvironmentDimension_X, 1fr);grid-template-rows: repeat(@CurrentEnvironmentDimension_Y, 1fr);" class="environment__layout">
         @foreach (var elm in @EnvironmentNodesData)
         {
-            <div class="environment-maze-node" style="background-color: @elm.BackgroundColor;" id="@elm.Index" @onclick="@(e => updateEnvironmentNodeStateData(@elm.Index))" />
+            @* <div class="environment-maze-node" style="background-color: @elm.BackgroundColor;" id="@elm.Index" @onclick="@(e => updateEnvironmentNodeStateData(@elm.Index))" /> *@
+            <MazeNode NodeID="@elm.Index" BackgroundColor="@elm.BackgroundColor" />
         }
     </div>
 
+    
 </div>
 

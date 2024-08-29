@@ -19,7 +19,7 @@
     transform-origin: left;
 }
     .sidebar-menu-button-group-container:hover {
-        transform: scaleX(2);
+        width: 35%;
         
     }
         .sidebar-menu-button-group-container:hover .sidebar-menu-tool-tips-group  {

@@ -10,7 +10,7 @@ namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGrou
 {
     public partial class EnvironmentSubPage
     {
-        [Parameter] public string PageTitle { get; set; }
+        [Parameter] required public string PageTitle { get; set; }
 
         public List<string> EmvironmentDimensionOptions = new List<string>
         {

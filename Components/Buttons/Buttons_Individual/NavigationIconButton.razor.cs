@@ -16,7 +16,7 @@ namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individu
         [Parameter] public string? ButtonIcon { get; set; }
 
         [Parameter] public string? ButtonIconColor { get; set; }
-        [Parameter] public Action OnClickCallBack { get; set; }
+        [Parameter] required public Action OnClickCallBack { get; set; }
 
         private void Handle_OnClickCallBack()
         {

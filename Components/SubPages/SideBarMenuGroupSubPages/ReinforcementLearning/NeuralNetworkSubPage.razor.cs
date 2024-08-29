@@ -11,7 +11,7 @@ namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGrou
 {
     public partial class NeuralNetworkSubPage
     {
-        [Parameter] public string PageTitle { get; set; }
+        [Parameter] required public string PageTitle { get; set; }
 
 
     }

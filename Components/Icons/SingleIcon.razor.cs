@@ -10,9 +10,9 @@ namespace MachineLearningApplication_Build_2.Components.Icons
 {
     public partial class SingleIcon
     {
-        [Parameter] public string Icon { get; set; }
-        [Parameter] public string IconColor { get; set; }
-        [Parameter] public string IconSize { get; set; }
+        [Parameter] required public string Icon { get; set; }
+        [Parameter] required public string IconColor { get; set; }
+        [Parameter] required public string IconSize { get; set; }
 
 
     }

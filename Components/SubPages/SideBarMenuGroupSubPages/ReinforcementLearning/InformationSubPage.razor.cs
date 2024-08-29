@@ -6,7 +6,7 @@ namespace MachineLearningApplication_Build_2.Components.SubPages.SideBarMenuGrou
 {
     public partial class InformationSubPage
     {
-        [Parameter] public string? PageTitle { get; set; }
+        [Parameter] required public string? PageTitle { get; set; }
 
         public InformationSubPageTextContent? TextContent { get; set; }
 
