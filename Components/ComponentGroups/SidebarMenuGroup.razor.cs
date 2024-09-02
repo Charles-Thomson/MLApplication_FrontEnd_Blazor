@@ -29,6 +29,8 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         public string CurrentlyDisplayedSubPageID { get; set; } = string.Empty;
         public string SubPageVisability { get; set; }
 
+        public string SideBarNavMenuContainerCSS { get; set; }
+
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
@@ -59,11 +61,13 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
             if (ButtonBuildData == null || newPageId == null) return;
 
             SetSubPageVisability(true);
+            SetSidBarNavMenuZIndex(true);
 
             if (newPageId == CurrentlyDisplayedSubPageID)
             {
                 CurrentlyDisplayedSubPageID = string.Empty;
                 SetSubPageVisability(false);
+                SetSidBarNavMenuZIndex(false);
                 return;
             }
 
@@ -83,6 +87,12 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         /// <param name="isVisable"></param>
         private void SetSubPageVisability(bool isVisable) {
             SubPageVisability = isVisable ? "side-bar-menu-content-group" : "side-bar-menu-content-group-hidden";
+            StateHasChanged();
+        }
+
+        private void SetSidBarNavMenuZIndex(bool isVisable)
+        {
+            SideBarNavMenuContainerCSS = isVisable ? "sidebar-menu-group-container" : "sidebar-menu-group-container-focused";
             StateHasChanged();
         }
 

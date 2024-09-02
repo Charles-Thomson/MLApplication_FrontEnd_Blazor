@@ -9,7 +9,7 @@
 
         <DropDownMenu LabelText="Y-Axis" BindValue="@stateContainer.EnvironmentDimension_Y" ValueChangedCallBack=@(value => stateContainer.EnvironmentDimension_Y = value) DropDownOptions="@EmvironmentDimensionOptions" />
     
-        <HorizontalButtonGroup />
+        <HorizontalButtonGroup ButtonBuildData="@ButtonBuildData"/>
         
     </div>
 

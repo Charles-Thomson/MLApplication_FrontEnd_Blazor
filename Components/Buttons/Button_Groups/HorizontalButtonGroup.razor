@@ -1,6 +1,8 @@
-﻿<div class="horizontal-button-group-container">
-    <IconButton ButtonIcon="bi bi-info-square" ButtonIconColor="red"/>
-    <IconButton ButtonIcon="bi bi-info-square" ButtonIconColor="blue" />
-    <IconButton ButtonIcon="bi bi-info-square" ButtonIconColor="yellow" />
-    <IconButton ButtonIcon="bi bi-info-square" ButtonIconColor="green" />
+﻿@using MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individual
+
+<div class="horizontal-button-group-container">
+    @foreach (var elm in @ButtonBuildData)
+    {
+        <IconButton ButtonTitle="@elm.ButtonTitle" ButtonIcon="@elm.ButtonIcon" ButtonIconColor="@elm.ButtonIconColor" OnClickCallBack=@elm.OnClickCallBack/>
+    }
 </div>

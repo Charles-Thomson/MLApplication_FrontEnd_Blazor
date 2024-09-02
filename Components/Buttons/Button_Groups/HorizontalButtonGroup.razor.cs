@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClasses;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,6 @@ namespace MachineLearningApplication_Build_2.Components.Buttons.Button_Groups
 {
     public partial class HorizontalButtonGroup
     {
-        public HorizontalButtonGroup()
-        {
-
-        }
+        [Parameter] required public List<IconButtonStateClass> ButtonBuildData { get; set; }
     }
 }

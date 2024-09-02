@@ -13,7 +13,30 @@ namespace MachineLearningApplication_Build_2.Services
         /// Hyper Perameter Data
         /// </summary>
         /// 
-        public NodeStateEnums NodeSelectionValue { get; set; }
+        
+
+
+        public event PropertyChangedEventHandler? NodeSelectionValueChanged;
+
+        protected virtual void OnNodeSelectionValueChanged(string propertyName)
+        {
+            Console.WriteLine("updating value in state container");
+            NodeSelectionValueChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private NodeStateEnums _NodeSelectionValue { get; set; }
+
+        public NodeStateEnums NodeSelectionValue {
+            get => _NodeSelectionValue;
+
+            set {
+                if (_NodeSelectionValue != value) {
+                    _NodeSelectionValue = value;
+                    OnNodeSelectionValueChanged(nameof(NodeSelectionValue));
+                }
+            
+            } 
+        }
 
         public string? NumberOfGenerations { get; set; } = string.Empty;
 

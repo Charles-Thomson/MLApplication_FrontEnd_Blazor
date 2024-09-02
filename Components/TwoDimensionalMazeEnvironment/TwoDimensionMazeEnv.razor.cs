@@ -44,12 +44,25 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
             }
         }
 
+        private NodeStateEnums NodeSelectionType { get; set; }
+
+        private void HandleNodeSelectionValueChange(object? sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(stateContainer.NodeSelectionValue))
+            {
+                Console.WriteLine($"Property changed recieved by Handle State in Maze: {e.PropertyName}");
+                NodeSelectionType = stateContainer.NodeSelectionValue;
+                Console.WriteLine(NodeSelectionType);
+            }
+        }
+
         /// <summary>
         /// Dispose of the event handler
         /// </summary>
         public void Dispose()
         {
             stateContainer.PropertyChanged -= HandleStateEnvSizeStateChange;
+            stateContainer.NodeSelectionValueChanged -= HandleNodeSelectionValueChange;
         }
 
         /// <summary>
@@ -94,6 +107,7 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
         {
             GenerateNewStateContainer();
             stateContainer.PropertyChanged += HandleStateEnvSizeStateChange;
+            stateContainer.NodeSelectionValueChanged += HandleNodeSelectionValueChange;
 
             OnEnvironmentDimensionsUpdated();
         }
@@ -126,15 +140,6 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
             return result;
         }
 
-
-        
-
-
-
-
-
-
-
         /// <summary>
         /// Set a new start node in the Environment
         /// </summary>
@@ -161,8 +166,7 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
             // Get the node from the List
             var SelectedNode = EnvironmentNodesData[nodeIndex];
 
-            // Get the nodeSelectionType
-            NodeStateEnums NodeSelectionType = stateContainer.NodeSelectionValue;
+            
 
             // Change the colour of the node based on the selection colour
             SelectedNode.BackgroundColor = NodeSelectionType switch

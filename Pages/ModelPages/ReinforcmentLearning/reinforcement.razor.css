@@ -8,19 +8,14 @@
     margin-left: 3rem;
     align-content: center;
     justify-content: center;
+    z-index:1;
 }
-
-
-
 
 .side-bar-menu-group-location {
     position: fixed;
     left: 0px;
-    width: 30vw;
-    height: 50vh;
-    z-index: 10;
-    padding-top: 1rem;
-    
+    z-index: 2;
+    padding-top: 1rem; 
 }
 
 
