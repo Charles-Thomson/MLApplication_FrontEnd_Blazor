@@ -1,14 +1,21 @@
-﻿namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnvironment
+﻿using Microsoft.AspNetCore.Components;
+
+namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnvironment
 {
     public class MazeNodeStateClass
     {
-        public int Index { get; set; }
+        public int nodeIndex { get; set; }
+
         public string BackgroundColor = "whitesmoke";
+        
 
-        public MazeNodeStateClass(int index)
+
+        private Action<int> handleNodeSelection;
+
+        public MazeNodeStateClass(int nodeIndex, Action<int> handleNodeSelection)
         {
-            this.Index = index;
+            this.nodeIndex = nodeIndex;
+            this.handleNodeSelection = handleNodeSelection;
         }
-
     }
 }

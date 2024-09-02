@@ -1,9 +1,10 @@
-﻿using System.Text.Json;
+﻿using System.ComponentModel;
+using System.Text.Json;
 using static MachineLearningApplication_Build_2.Enums.EnvironmentNodeEnums;
 
 namespace MachineLearningApplication_Build_2.Services
 {
-    public class InstanceAttributeStateContainer
+    public class InstanceAttributeStateContainer : INotifyPropertyChanged
     {
         public string? InstanceName { get; set; } = "New Holder";
 
@@ -54,12 +55,45 @@ namespace MachineLearningApplication_Build_2.Services
         /// Environment Data
         /// </summary>
 
-        public string? EnvironmentDimension_X { get; set; } = "2";
-        public string? EnvironmentDimension_Y { get; set; } = "2";
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private string? _EnvironmentDimension_X { get; set; } = "2";
+        private string? _EnvironmentDimension_Y { get; set; } = "2";
+
+
+        public string? EnvironmentDimension_X
+        {
+            get => _EnvironmentDimension_X;
+            set
+            {
+                if (_EnvironmentDimension_X != value)
+                {
+                    _EnvironmentDimension_X = value;
+                    OnPropertyChanged(nameof(EnvironmentDimension_X));
+                }
+            }
+        } 
+
+        public string? EnvironmentDimension_Y
+        {
+            get => _EnvironmentDimension_Y;
+            set
+            {
+                if (_EnvironmentDimension_Y != value)
+                {
+                    _EnvironmentDimension_Y = value;
+                    OnPropertyChanged(nameof(EnvironmentDimension_Y));
+                }
+            }
+        }
 
         public int EnvironmentStartState { get; set; } = 0;
 
-        public List<int>? EnvironmentNodeStateData { get; set; }
+        public int[]? EnvironmentNodeStateData { get; set; }
 
         /// <summary>
         /// Convert Data to Json for API use

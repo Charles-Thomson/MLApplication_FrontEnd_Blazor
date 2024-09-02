@@ -26,6 +26,7 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.ReinforcmentLearni
             SideNavigationBuildData = GenerateSideBarMenuStateClass();
         }
 
+        
         /// <summary>
         /// Helper function of the creation of NavigationIconButton_StateClass
         /// </summary>

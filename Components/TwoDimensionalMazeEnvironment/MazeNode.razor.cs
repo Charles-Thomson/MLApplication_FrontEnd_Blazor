@@ -10,9 +10,14 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
 {
     public partial class MazeNode
     {
-        [Parameter] required public int NodeID { get; set; }
+        
+        [Parameter] required public int NodeIndex { get; set; } 
         [Parameter] required public string BackgroundColor { get; set; }
 
-        [Parameter] public EventCallback<string> OnClickCallBack { get; set; }
+        [Parameter] public EventCallback<int> OnClickCallBack { get; set; }
+
+        private async Task HandleOnClickCallBack() {
+            await OnClickCallBack.InvokeAsync(NodeIndex);
+        }
     }
 }

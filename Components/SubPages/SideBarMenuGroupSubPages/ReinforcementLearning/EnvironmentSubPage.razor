@@ -1,4 +1,5 @@
 ﻿@inject Services.InstanceAttributeStateContainer stateContainer
+
 <SideBarMenuGroupSubPageLayout Title="@PageTitle">
 
     <div class="sub-page-main-content">
@@ -7,6 +8,9 @@
         <DropDownMenu LabelText="X-Axis" BindValue="@stateContainer.EnvironmentDimension_X" ValueChangedCallBack=@(value => stateContainer.EnvironmentDimension_X = value) DropDownOptions="@EmvironmentDimensionOptions"/>
 
         <DropDownMenu LabelText="Y-Axis" BindValue="@stateContainer.EnvironmentDimension_Y" ValueChangedCallBack=@(value => stateContainer.EnvironmentDimension_Y = value) DropDownOptions="@EmvironmentDimensionOptions" />
+    
+        <HorizontalButtonGroup />
+        
     </div>
 
 </SideBarMenuGroupSubPageLayout>

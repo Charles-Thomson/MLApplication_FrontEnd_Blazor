@@ -20,7 +20,9 @@ namespace MachineLearningApplication_Build_2.Components.InputFields
 
         private async Task OnValueChanged(ChangeEventArgs e)
         {
+            
             BindValue = e.Value?.ToString();
+            Console.WriteLine($"Updating: {BindValue}");
             await ValueChangedCallBack.InvokeAsync(BindValue);
         }
     }

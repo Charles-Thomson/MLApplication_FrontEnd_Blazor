@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blazorise;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using static MachineLearningApplication_Build_2.Enums.EnvironmentNodeEnums;
@@ -16,69 +18,133 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
 
         private int TotalNumberOfNodesInEnvironment { get; set; }
 
-        //private int _currentEnvironmentDimension_X { get; set; }
-        //private int _currentEnvironmentDimension_Y { get; set; }
-
-        //[CascadingParameter(Name = "CurrentEnvironmentDimension_X")]
-        //public int CurrentEnvironmentDimension_X
-        //{
-        //    get => _currentEnvironmentDimension_X;
-        //    set
-        //    {
-        //        _currentEnvironmentDimension_X = value;
-        //        UpdateEnvironmentDimensions(value, CurrentEnvironmentDimension_Y);
-        //    }
-        //}
-
-        //[CascadingParameter(Name = "CurrentEnvironmentDimension_Y")]
-        //public int CurrentEnvironmentDimension_Y
-        //{
-        //    get => _currentEnvironmentDimension_Y;
-        //    set
-        //    {
-        //        _currentEnvironmentDimension_Y = value;
-        //        UpdateEnvironmentDimensions(CurrentEnvironmentDimension_X, value);
-        //    }
-        //}
-
+      
         public int CurrentEnvironmentDimension_X = 2;
 
         public int CurrentEnvironmentDimension_Y = 2;
 
+        [Inject]
+        private Services.InstanceAttributeStateContainer stateContainer { get; set; } // Ensures it's not null, but this depends on how it's set.
 
-        public TwoDimensionMazeEnv() {
-            UpdateEnvironmentDimensions(2, 2);
 
+        /// <summary>
+        /// Handle the update of value in the state container
+        /// When value are updated the handler is triggered and the env is redrawn to the new dimensions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HandleStateEnvSizeStateChange(object? sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(stateContainer.EnvironmentDimension_X) || e.PropertyName == nameof(stateContainer.EnvironmentDimension_Y))
+            {
+                Console.WriteLine($"Property changed recieved by Handle State in Maze: {e.PropertyName}");
 
+                OnEnvironmentDimensionsUpdated();
+                InvokeAsync(StateHasChanged);
+            }
         }
 
-        public void UpdateEnvironmentDimensions(int CurrentEnvironmentDimension_X, int CurrentEnvironmentDimension_Y)
+        /// <summary>
+        /// Dispose of the event handler
+        /// </summary>
+        public void Dispose()
         {
-            Log.Information($"Environment Dimensions being updated with values {CurrentEnvironmentDimension_X} - {CurrentEnvironmentDimension_Y}");
-            TotalNumberOfNodesInEnvironment = CurrentEnvironmentDimension_X * CurrentEnvironmentDimension_Y;
-            Console.WriteLine($"Total number of new states : {TotalNumberOfNodesInEnvironment}");
-
-            //List<int> holder = new List<int>(5);
-
-            //stateContainer.EnvironmentNodeStateData = holder;
-
-            EnvironmentNodesData = GenerateEnvironmentNodes(TotalNumberOfNodesInEnvironment);
+            stateContainer.PropertyChanged -= HandleStateEnvSizeStateChange;
         }
 
-        public List<MazeNodeStateClass> GenerateEnvironmentNodes(int environmentSizeAsInt)
+        /// <summary>
+        /// Update the current Evnvironment dimension values from the stateContainer
+        /// </summary>
+        private void UpdateCurrentEnvDimensionsFromStateContainer() {
+            CurrentEnvironmentDimension_X = ParseStrToInt(stateContainer.EnvironmentDimension_X);
+            CurrentEnvironmentDimension_Y = ParseStrToInt(stateContainer.EnvironmentDimension_Y);
+        }
+
+        /// <summary>
+        /// Calculate the total number of nodes in the env based on x,y dimensions
+        /// </summary>
+        /// <returns>int</returns>
+        private int CalculateTotalNumberOfNodes() => CurrentEnvironmentDimension_X * CurrentEnvironmentDimension_Y;
+
+
+        public List<MazeNodeStateClass> GenerateEnvironmentNodes(int TotalNumberOfNodesInEnvironment)
         {
-
-            if (environmentSizeAsInt < 0) throw new ArgumentException("Environment size must be a positive integer.");
-
-            var generateNodes = Enumerable.Range(0, environmentSizeAsInt)
-                .Select(index => new MazeNodeStateClass(index))
+            var generateNodes = Enumerable.Range(0, TotalNumberOfNodesInEnvironment)
+                .Select(nodeIndex => new MazeNodeStateClass(nodeIndex, HandleNodeSelection))
                 .ToList();
 
             return generateNodes;
         }
 
+
+        /// <summary>
+        /// When the enviornment size is changed the following methods are called
+        /// </summary>
+        private void OnEnvironmentDimensionsUpdated() {
+            UpdateCurrentEnvDimensionsFromStateContainer();
+            TotalNumberOfNodesInEnvironment = CalculateTotalNumberOfNodes();
+            EnvironmentNodesData = GenerateEnvironmentNodes(TotalNumberOfNodesInEnvironment);
+
+        }
+        private void UpdateStateContainerTotalNumberOfNodes() => stateContainer.EnvironmentNodeStateData = new int[TotalNumberOfNodesInEnvironment];
+
+
+
+        protected override void OnInitialized()
+        {
+            GenerateNewStateContainer();
+            stateContainer.PropertyChanged += HandleStateEnvSizeStateChange;
+
+            OnEnvironmentDimensionsUpdated();
+        }
+        
+
+        /// <summary>
+        /// Generate a new stateContainer object if one doe snot exist
+        /// </summary>
+        public void GenerateNewStateContainer() {
+            if (stateContainer == null) {
+                stateContainer = new Services.InstanceAttributeStateContainer();
+            }
+        }
+
+
+        /// <summary>
+        /// Parse a string representation of an int to int
+        /// </summary>
+        /// <param name="strValue">int value as str</param>
+        /// <returns>int</returns>
+        private int ParseStrToInt(string? strValue) {
+            int result = 0;
+
+            if (strValue == null) return result ;
+
+            if (int.TryParse(strValue, out var intValue)) 
+            {
+                result = intValue;
+            }
+            return result;
+        }
+
+
+        
+
+
+
+
+
+
+
+        /// <summary>
+        /// Set a new start node in the Environment
+        /// </summary>
+        /// <param name="Index"></param>
         public void SetNewStartNode(int Index) => stateContainer.EnvironmentStartState = Index;
 
+
+        /// <summary>
+        /// Remove the previous start node from the environment
+        /// </summary>
         public void RemoveOldStartNodeFromEnvironment()
         {
             var Node = EnvironmentNodesData[stateContainer.EnvironmentStartState];
@@ -88,15 +154,18 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
             stateContainer.EnvironmentNodeStateData[stateContainer.EnvironmentStartState] = 0;
         }
 
-        public void updateEnvironmentNodeStateData(int Index)
-        {
-            CheckEnvironmentNodeStateDataListSize();
-            Console.WriteLine("Vaslue is being updated");
 
-            var SelectedNode = EnvironmentNodesData[Index];
-            NodeStateEnums CurrentSelectionNode = stateContainer.NodeSelectionValue;
+        public void HandleNodeSelection(int nodeIndex) {
 
-            SelectedNode.BackgroundColor = CurrentSelectionNode switch
+            Console.WriteLine($"Node To be updated - index: {nodeIndex}");
+            // Get the node from the List
+            var SelectedNode = EnvironmentNodesData[nodeIndex];
+
+            // Get the nodeSelectionType
+            NodeStateEnums NodeSelectionType = stateContainer.NodeSelectionValue;
+
+            // Change the colour of the node based on the selection colour
+            SelectedNode.BackgroundColor = NodeSelectionType switch
             {
                 NodeStateEnums.Empty => NodeBackgroundColorsEnums.Empty,
                 NodeStateEnums.Start => NodeBackgroundColorsEnums.Start,
@@ -105,21 +174,55 @@ namespace MachineLearningApplication_Build_2.Components.TwoDimensionalMazeEnviro
                 _ => NodeBackgroundColorsEnums.Empty
             };
 
+            // Check for new start node
             if (stateContainer.NodeSelectionValue == NodeStateEnums.Start)
             {
                 RemoveOldStartNodeFromEnvironment();
-                SetNewStartNode(Index);
+                SetNewStartNode(nodeIndex);
                 return;
             }
 
-            stateContainer.EnvironmentNodeStateData[Index] = (int)CurrentSelectionNode;
             StateHasChanged();
         }
 
-        private void CheckEnvironmentNodeStateDataListSize()
-        {
-            if (stateContainer.EnvironmentNodeStateData?.Count == TotalNumberOfNodesInEnvironment) return;
-            stateContainer.EnvironmentNodeStateData = new List<int>(new int[TotalNumberOfNodesInEnvironment]);
-        }
+
+        ///// <summary>
+        ///// Update the maze node state when node is selected
+        ///// </summary>
+        ///// <param name="Index"></param>
+        //public void updateEnvironmentNodeStateData(int Index)
+        //{
+        //    //CheckEnvironmentNodeStateDataListSize();
+        //    Console.WriteLine("Vaslue is being updated");
+
+        //    var SelectedNode = EnvironmentNodesData[Index];
+        //    NodeStateEnums CurrentSelectionNode = stateContainer.NodeSelectionValue;
+
+        //    SelectedNode.BackgroundColor = CurrentSelectionNode switch
+        //    {
+        //        NodeStateEnums.Empty => NodeBackgroundColorsEnums.Empty,
+        //        NodeStateEnums.Start => NodeBackgroundColorsEnums.Start,
+        //        NodeStateEnums.Obstical => NodeBackgroundColorsEnums.Obstical,
+        //        NodeStateEnums.Goal => NodeBackgroundColorsEnums.Goal,
+        //        _ => NodeBackgroundColorsEnums.Empty
+        //    };
+
+        //    if (stateContainer.NodeSelectionValue == NodeStateEnums.Start)
+        //    {
+        //        RemoveOldStartNodeFromEnvironment();
+        //        SetNewStartNode(Index);
+        //        return;
+        //    }
+
+        //    StateHasChanged();
+        //}
+
+        /// Will pull the satte data when needed - aka lazy 
+        
+        //private void CheckEnvironmentNodeStateDataListSize()
+        //{
+        //    if (stateContainer.EnvironmentNodeStateData?.Count == TotalNumberOfNodesInEnvironment) return;
+        //    stateContainer.EnvironmentNodeStateData = new List<int>(new int[TotalNumberOfNodesInEnvironment]);
+        //}
     }
 }
