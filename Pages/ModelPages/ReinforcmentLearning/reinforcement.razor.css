@@ -6,9 +6,12 @@
     left: 0px;
     z-index: 1;
     margin-left: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 5rem;
     align-content: center;
     justify-content: center;
-    z-index:1;
+    z-index: 1;
 }
 
 .side-bar-menu-group-location {

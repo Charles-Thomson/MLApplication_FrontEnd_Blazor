@@ -20,7 +20,7 @@ namespace MachineLearningApplication_Build_2.Services
 
         protected virtual void OnNodeSelectionValueChanged(string propertyName)
         {
-            Console.WriteLine("updating value in state container");
+
             NodeSelectionValueChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
@@ -84,8 +84,8 @@ namespace MachineLearningApplication_Build_2.Services
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private string? _EnvironmentDimension_X { get; set; } = "2";
-        private string? _EnvironmentDimension_Y { get; set; } = "2";
+        private string? _EnvironmentDimension_X { get; set; } = "4";
+        private string? _EnvironmentDimension_Y { get; set; } = "4";
 
 
         public string? EnvironmentDimension_X

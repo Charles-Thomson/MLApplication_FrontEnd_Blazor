@@ -5,6 +5,7 @@
        flex-direction: column;
        padding-top: 1rem;
        padding: 1rem;
+       background-color: whitesmoke;
 }
 
 .side-bar-sub-page-title {
@@ -23,5 +24,6 @@
     width: inherit;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: transparent;
+    max-width: 20vw;
 }

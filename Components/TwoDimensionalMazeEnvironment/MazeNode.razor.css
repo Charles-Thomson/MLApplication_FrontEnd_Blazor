@@ -1,4 +1,4 @@
 ﻿.node-container {
+    border: dashed var(--secondary-color) 1px;
     
-    border: solid black 2px;
 }

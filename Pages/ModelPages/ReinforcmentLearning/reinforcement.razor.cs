@@ -80,11 +80,11 @@ namespace MachineLearningApplication_Build_2.Pages.ModelPages.ReinforcmentLearni
                 builder.CloseComponent();
             };
 
-            IconButtonStateClass ButtonStateData_Information = GenerateIconButtonStateClass("Information", "bi bi-info-square", "primary-color");
-            IconButtonStateClass ButtonStateData_Hyperparameters = GenerateIconButtonStateClass("Hyperparameters", "bi bi bi-gear-fill", "primary-color");
-            IconButtonStateClass ButtonStateData_Environment = GenerateIconButtonStateClass("Environment", "bi bi-globe-americas", "primary-color");
-            IconButtonStateClass ButtonStateData_Neural_Network = GenerateIconButtonStateClass("Neural Network", "bi bi-share-fill", "primary-color");
-            IconButtonStateClass ButtonStateData_Submit = GenerateIconButtonStateClass("Submit", "bi bi-send-fill", "primary-color");
+            IconButtonStateClass ButtonStateData_Information = GenerateIconButtonStateClass("Information", "bi bi-info-square", "secondary-color");
+            IconButtonStateClass ButtonStateData_Hyperparameters = GenerateIconButtonStateClass("Hyperparameters", "bi bi bi-gear-fill", "secondary-color");
+            IconButtonStateClass ButtonStateData_Environment = GenerateIconButtonStateClass("Environment", "bi bi-globe-americas", "secondary-color");
+            IconButtonStateClass ButtonStateData_Neural_Network = GenerateIconButtonStateClass("Neural Network", "bi bi-share-fill", "secondary-color");
+            IconButtonStateClass ButtonStateData_Submit = GenerateIconButtonStateClass("Submit", "bi bi-send-fill", "secondary-color");
 
             List<SideBarMenuStateClass> newBuildData = new List<SideBarMenuStateClass> {
                 new SideBarMenuStateClass(ClassId: "Information", ToolTipText: "Information", ButtonBuildData: ButtonStateData_Information, SubPageContent: InformationPageRnderFragment),
