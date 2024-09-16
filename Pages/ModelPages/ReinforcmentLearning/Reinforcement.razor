@@ -3,14 +3,17 @@
 @rendermode InteractiveServer
 @inject Services.InstanceAttributeStateContainer stateContainer
 
+<div class="reinforcment-page-container">
+    <div class="side-bar-menu-content">
+        @* <SidebarMenuGroup BuildData=@SideNavigationBuildData /> *@
+        <SideNavigationGroup />
+    </div>
+    <div class="main-content">
 
-<div class="side-bar-menu-group-location">
-    <SidebarMenuGroup BuildData=@SideNavigationBuildData />
-</div>
+        <TwoDimensionMazeEnv />
+
+    </div>
 
 
-<div class="main-content">
-    
-    <TwoDimensionMazeEnv />
-        
+
 </div>

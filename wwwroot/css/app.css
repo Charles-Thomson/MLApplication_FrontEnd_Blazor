@@ -20,6 +20,8 @@
     --main-content-margin-padding: 20vw;
     /**/
     --side-naviagtion-icon-size: calc(var(--icon-button-icon-size) - 0.75rem );
+
+    --left-side-naviagtion-buttons-padding: 10rem;
 }
 
 @media (max-width: 1200px) {

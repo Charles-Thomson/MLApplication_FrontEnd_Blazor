@@ -1,15 +1,16 @@
 ﻿using MachineLearningApplication_Build_2.Components.Buttons.ButtonStateClasses;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.JSInterop;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MachineLearningApplication_Build_2.Components.ComponentGroups
 {
-    public partial class SidebarMenuGroup
+    public partial class SideNavigationGroup
     {
-        //[Parameter] required public List<IconButtonStateClass> BuildData { get; set; }
-
-
         [Inject] protected IJSRuntime JSRuntime { get; set; }
 
         private List<SideBarMenuStateClass>? _buildData;
@@ -17,7 +18,8 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         required public List<SideBarMenuStateClass> BuildData
         {
             get { return _buildData; }
-            set {  
+            set
+            {
                 _buildData = value;
                 ParseBuildData();
             }
@@ -46,10 +48,12 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         /// <summary>
         /// Set the call back function of IconButtonStateClass
         /// </summary>
-        protected void SetCallBackFunctions() {
+        protected void SetCallBackFunctions()
+        {
             if (ButtonBuildData == null) return;
 
-            foreach (IconButtonStateClass elm in ButtonBuildData) {
+            foreach (IconButtonStateClass elm in ButtonBuildData)
+            {
                 if (elm.ButtonTitle == null) continue;
                 elm.OnClickCallBack = () => UpdateDisplayedSubPage(elm.ButtonTitle);
             }
@@ -59,8 +63,9 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         /// Update the currently displayed SubPage render fragment
         /// </summary>
         /// <param name="newPageId">ID of the new page to be displayed</param>
-        public void UpdateDisplayedSubPage(string newPageId) {
-           
+        public void UpdateDisplayedSubPage(string newPageId)
+        {
+
             if (ButtonBuildData == null || newPageId == null) return;
 
             SetSubPageVisability(true);
@@ -88,7 +93,8 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         /// Set the visability of the SubPage container
         /// </summary>
         /// <param name="isVisable"></param>
-        private void SetSubPageVisability(bool isVisable) {
+        private void SetSubPageVisability(bool isVisable)
+        {
             SubPageVisability = isVisable ? "side-bar-menu-content-group" : "side-bar-menu-content-group-hidden";
             StateHasChanged();
         }
@@ -102,7 +108,8 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         /// <summary>
         /// Break out the elements of the build data 
         /// </summary>
-        protected void ParseBuildData() {
+        protected void ParseBuildData()
+        {
 
             SubPageVisability = "side-bar-menu-content-group-hidden";
             if (BuildData == null) return;
@@ -120,4 +127,3 @@ namespace MachineLearningApplication_Build_2.Components.ComponentGroups
         }
     }
 }
-
