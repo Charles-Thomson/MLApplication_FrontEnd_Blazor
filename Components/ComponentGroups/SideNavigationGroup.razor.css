@@ -1,12 +1,11 @@
 ﻿.side-naviagtion-group-container {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    background-color: grey;
+    gap: 0.4rem;
+    background-color: transparent;
     height: 100%;
     width: 10rem;
-    padding: 0.1rem;
-    
+    padding: 0.2rem;
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
 }
-
-

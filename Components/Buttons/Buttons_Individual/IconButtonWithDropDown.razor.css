@@ -3,14 +3,68 @@
     flex-direction: column;
     width: 100%;
     background-color: transparent;
-    border: solid black 1px;
-    border-radius: 6px;
-    padding: 0.2rem;
+    border-bottom: solid var(--primary-color) 2px;
+    border-radius: 8px;
+    
     transition: height 3s;
+    min-height: 2rem;
+    gap: 0.5rem;
+}
+
+    
+
+.button-header-content {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start;
+    flex-direction: row;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    
+    gap: 0.5rem;
+    
+}
+
+.icon-right {
+    margin-left: auto; /* Pushes the right icon to the far end */
+    
+}
+
+.button-body-content {
+    overflow: auto;
+    width: 100%;
+    margin-left: 2px;
+    
+    
 }
 
 
 .button-title {
-    text-align: left;
-
+    
+    white-space: nowrap;
 }
+
+
+
+/* Apply to all scrollbars */
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 1px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Background of the scrollbar track */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: black; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Optional: Rounded corners */
+    
+}
+
+    
+
