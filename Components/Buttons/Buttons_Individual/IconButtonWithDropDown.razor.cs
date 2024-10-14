@@ -10,8 +10,17 @@ namespace MachineLearningApplication_Build_2.Components.Buttons.Buttons_Individu
 {
     public partial class IconButtonWithDropDown
     {
-        [Parameter] public string? ButtonText { get; set; }
-        [Parameter] public string? Icon { get; set; }
+
+
+        /// <summary>
+        /// Convert to take build data as a class 
+        /// </summary>
+        /// 
+        [Parameter] public IconButtonDropDownStateClass BuildData { get; set; }
+
+
+        //[Parameter] public string? ButtonText { get; set; }
+        //[Parameter] public string? Icon { get; set; }
 
         public string HeightCSS { get; set; }
         public string CloseButtonCSS { get; set; }

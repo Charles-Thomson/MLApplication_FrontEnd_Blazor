@@ -1,8 +1,8 @@
 ﻿<div class="button-container" style="height:@HeightCSS">
 
     <button class="button-header-content" @onclick=@HandleOnclick>
-            <SingleIcon Icon="@Icon" IconColor="blue" IconSize="icon-size-small" />
-            <span class="button-title" >@ButtonText</span>
+        <SingleIcon Icon="@BuildData.Icon" IconColor="blue" IconSize=@BuildData.IconSize />
+        <span class="button-title">@BuildData.ButtonText</span>
 
         <i class="icon-right" style="visibility: @CloseButtonCSS">
                 <SingleIcon Icon=" bi bi-caret-up" IconColor="grey" IconSize="icon-size-small" />
@@ -10,37 +10,7 @@
     </button>
 
     <div class="button-body-content">
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
-        This is bodt content
+        @BuildData.DropDownContent
        
     </div>
     
